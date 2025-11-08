@@ -1,0 +1,32 @@
+# Sistemas / logs
+.DS_Store
+*.log
+
+# Variáveis de ambiente
+.env
+.env.*.local
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+db.sqlite3
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# IDE
+.vscode/
+.idea/
+
+# Cobertura / cache
+coverage/
+pytest_cache/
