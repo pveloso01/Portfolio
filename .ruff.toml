@@ -1,0 +1,12 @@
+target-version = "py312"
+line-length = 100
+extend-exclude = ["apps/api/**/migrations/*"]
+
+[lint]
+select = ["E","F","I","UP","B","C4","SIM"]
+ignore = []
+fixable = ["ALL"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
