@@ -8,9 +8,12 @@ class ThrottledUserViewSet(DjoserUserViewSet):
         "create": "auth-register",
         "activation": "auth-activate",
         "resend_activation": "auth-activate-resend",
-        "reset_password": "auth-reset",
-        "reset_password_confirm": "auth-reset-confirm",
+        "reset_password": "auth-reset-password",
+        "reset_password_confirm": "auth-reset-password-confirm",
         "set_password": "auth-set-password",
+        "reset_username": "auth-reset-email",
+        "reset_username_confirm": "auth-reset-email-confirm",
+        "set_username": "auth-set-email",
     }
 
     def get_throttles(self):

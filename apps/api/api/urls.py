@@ -5,6 +5,7 @@ from core.views_auth import (
     RefreshView,  # TokenRefreshView with ScopedRateThrottle
     VerifyView,  # TokenVerifyView with ScopedRateThrottle
 )
+from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
@@ -17,7 +18,6 @@ router.register("users", ThrottledUserViewSet, basename="users")
 urlpatterns = [
     # Admin & debug toolbar
     path("admin/", admin.site.urls),
-    path("__debug__/", include("debug_toolbar.urls")),
     # JWT endpoints (views com throttling/escopos)
     path("api/v1/auth/jwt/create/", LoginView.as_view(), name="jwt-create"),
     path("api/v1/auth/jwt/refresh/", RefreshView.as_view(), name="jwt-refresh"),
@@ -30,5 +30,10 @@ urlpatterns = [
     # Healthcheck (K8s/LB) e OpenAPI + Swagger
     path("healthz/", healthz),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
-    path("api/docs/", SpectacularSwaggerView.as_view(url_name="schema"), name="docs"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        path("__debug__/", include("debug_toolbar.urls")),
+        path("api/docs/", SpectacularSwaggerView.as_view(url_name="schema"), name="docs"),
+    ]

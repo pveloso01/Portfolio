@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
+    "pwned_passwords_django",
     "drf_spectacular",
     "corsheaders",
     "djoser",
@@ -60,8 +61,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "corsheaders.middleware.CorsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -112,12 +113,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "OPTIONS": {"min_length": 12},
     },
     {
         "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
+    {
+        "NAME": "pwned_passwords_django.validators.PwnedPasswordsValidator",
     },
 ]
 
@@ -159,16 +164,19 @@ REST_FRAMEWORK = {
     "DEFAULT_THROTTLE_RATES": {
         "anon": "60/min",
         "user": "120/min",
-        "auth-login": "5/min",
-        "auth-refresh": "30/min",
+        "auth-login": "10/min",
+        "auth-refresh": "20/min",
         "auth-verify": "60/min",
         "auth-logout": "30/min",
-        "auth-register": "3/min",
+        "auth-register": "5/min",
         "auth-activate": "10/min",
         "auth-activate-resend": "3/min",
-        "auth-reset": "5/min",
-        "auth-reset-confirm": "5/min",
+        "auth-reset-password": "5/min",
+        "auth-reset-password-confirm": "5/min",
         "auth-set-password": "5/min",
+        "auth-reset-email": "5/min",
+        "auth-reset-email-confirm": "5/min",
+        "auth-set-email": "5/min",
     },
 }
 
@@ -189,10 +197,15 @@ DJOSER = {
     "USER_CREATE_PASSWORD_RETYPE": True,  # require re_password on /users/
     "SET_PASSWORD_RETYPE": True,  # require re_new_password on /users/set_password/
     "PASSWORD_RESET_CONFIRM_RETYPE": True,  # require re_new_password on reset confirm
+    "PASSWORD_CHANGED_EMAIL_CONFIRMATION": True,
+    "USERNAME_CHANGED_EMAIL_CONFIRMATION": True,
+    "PASSWORD_RESET_SHOW_EMAIL_NOT_FOUND": False,  # anti-enumeração (manter False)
     # Email-driven flows (frontend links MUST include {uid} and {token})
     "SEND_ACTIVATION_EMAIL": True,
+    "SEND_CONFIRMATION_EMAIL": True,
     "ACTIVATION_URL": "activate/{uid}/{token}",
     "PASSWORD_RESET_CONFIRM_URL": "reset-password/{uid}/{token}",
+    "USERNAME_RESET_CONFIRM_URL": "reset-email/{uid}/{token}",
     # Optional (nice to have; used to build URLs in emails)
     "EMAIL_FRONTEND_DOMAIN": os.getenv("FRONTEND_DOMAIN", "localhost:3000"),
     "EMAIL_FRONTEND_PROTOCOL": os.getenv("FRONTEND_PROTOCOL", "http"),
@@ -204,11 +217,12 @@ DJOSER = {
         "user": ["djoser.permissions.CurrentUserOrAdmin"],
         "user_list": ["djoser.permissions.CurrentUserOrAdmin"],
     },
-    # Keep serializers minimal (yours) to avoid oversharing
     "SERIALIZERS": {
         "user_create": "users.serializers.UserCreateSerializer",
         "user": "users.serializers.UserSerializer",
         "current_user": "users.serializers.UserSerializer",
+        "set_password": "users.serializers.SetPasswordAndBlacklistSerializer",
+        "set_password_retype": "users.serializers.SetPasswordAndBlacklistSerializer",
     },
 }
 
