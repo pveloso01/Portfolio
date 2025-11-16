@@ -163,6 +163,11 @@ REST_FRAMEWORK = {
         "auth-refresh": "30/min",
         "auth-verify": "60/min",
         "auth-logout": "30/min",
+        "auth-register": "3/min",
+        "auth-activate": "10/min",
+        "auth-activate-resend": "3/min",
+        "auth-reset": "5/min",
+        "auth-reset-confirm": "5/min",
     },
 }
 
