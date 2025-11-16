@@ -21,4 +21,6 @@ from django.urls import include, path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("__debug__/", include("debug_toolbar.urls")),
+    path("api/v1/auth/", include("djoser.urls")),
+    path("api/v1/auth/", include("djoser.urls.jwt")),  # /jwt/create, /jwt/refresh, /jwt/verify
 ]
