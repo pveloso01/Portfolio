@@ -168,6 +168,7 @@ REST_FRAMEWORK = {
         "auth-activate-resend": "3/min",
         "auth-reset": "5/min",
         "auth-reset-confirm": "5/min",
+        "auth-set-password": "5/min",
     },
 }
 
