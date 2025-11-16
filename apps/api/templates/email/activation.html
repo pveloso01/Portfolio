@@ -1,0 +1,20 @@
+{% block subject %}Activate your account{% endblock %}
+
+{% block text_body %}
+Hi {{ user.email }},
+
+Finish your signup:
+{{ protocol }}://{{ domain }}/{{ url }}
+
+If you didn’t request this, you can ignore this email.
+
+— {{ site_name }}
+{% endblock %}
+
+{% block html_body %}
+<p>Hi {{ user.email }},</p>
+<p>Finish your signup:</p>
+<p><a href="{{ protocol }}://{{ domain }}/{{ url }}">{{ protocol }}://{{ domain }}/{{ url }}</a></p>
+<p>If you didn’t request this, you can ignore this email.</p>
+<p>— {{ site_name }}</p>
+{% endblock %}
