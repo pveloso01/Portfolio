@@ -176,8 +176,28 @@ SIMPLE_JWT = {
 }
 
 DJOSER = {
+    # Use email for login (your custom User should have USERNAME_FIELD = "email")
     "LOGIN_FIELD": "email",
-    "USER_CREATE_PASSWORD_RETYPE": True,
+    # Signup UX & safety
+    "USER_CREATE_PASSWORD_RETYPE": True,  # require re_password on /users/
+    "SET_PASSWORD_RETYPE": True,  # require re_new_password on /users/set_password/
+    "PASSWORD_RESET_CONFIRM_RETYPE": True,  # require re_new_password on reset confirm
+    # Email-driven flows (frontend links MUST include {uid} and {token})
+    "SEND_ACTIVATION_EMAIL": True,
+    "ACTIVATION_URL": "activate/{uid}/{token}",
+    "PASSWORD_RESET_CONFIRM_URL": "reset-password/{uid}/{token}",
+    # Optional (nice to have; used to build URLs in emails)
+    "EMAIL_FRONTEND_DOMAIN": os.getenv("FRONTEND_DOMAIN", "localhost:3000"),
+    "EMAIL_FRONTEND_PROTOCOL": os.getenv("FRONTEND_PROTOCOL", "http"),
+    # JWT-only: disable DRF Token model to avoid confusion/extra tables
+    "TOKEN_MODEL": None,
+    # Least-privilege on user endpoints, avoid user enumeration
+    "HIDE_USERS": True,
+    "PERMISSIONS": {
+        "user": ["djoser.permissions.CurrentUserOrAdmin"],
+        "user_list": ["djoser.permissions.CurrentUserOrAdmin"],
+    },
+    # Keep serializers minimal (yours) to avoid oversharing
     "SERIALIZERS": {
         "user_create": "users.serializers.UserCreateSerializer",
         "user": "users.serializers.UserSerializer",
@@ -200,3 +220,6 @@ CORS_ALLOWED_ORIGINS = [
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+# --- Email (DEV) ---
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
