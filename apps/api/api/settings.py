@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "corsheaders",
     "core",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -147,6 +148,8 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
+
+AUTH_USER_MODEL = "users.User"
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
