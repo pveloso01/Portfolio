@@ -1,4 +1,5 @@
 from core.views import healthz
+from core.views_auth import LogoutView
 from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
@@ -9,6 +10,7 @@ urlpatterns = [
     # Auth (Djoser + JWT)
     path("api/v1/auth/", include("djoser.urls")),
     path("api/v1/auth/", include("djoser.urls.jwt")),
+    path("api/v1/auth/logout/", LogoutView.as_view(), name="auth-logout"),
     # Healthcheck (used by LB/uptime/K8s)
     path("healthz/", healthz),
     # OpenAPI schema + Swagger UI (keep in dev or protect in prod)
