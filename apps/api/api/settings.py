@@ -155,29 +155,6 @@ REST_FRAMEWORK = {
     ),
     # OpenAPI via drf-spectacular
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-    # Throttling base (anti-abuso)
-    "DEFAULT_THROTTLE_CLASSES": [
-        "rest_framework.throttling.AnonRateThrottle",
-        "rest_framework.throttling.UserRateThrottle",
-        "rest_framework.throttling.ScopedRateThrottle",
-    ],
-    "DEFAULT_THROTTLE_RATES": {
-        "anon": "60/min",
-        "user": "120/min",
-        "auth-login": "10/min",
-        "auth-refresh": "20/min",
-        "auth-verify": "60/min",
-        "auth-logout": "30/min",
-        "auth-register": "5/min",
-        "auth-activate": "10/min",
-        "auth-activate-resend": "3/min",
-        "auth-reset-password": "5/min",
-        "auth-reset-password-confirm": "5/min",
-        "auth-set-password": "5/min",
-        "auth-reset-email": "5/min",
-        "auth-reset-email-confirm": "5/min",
-        "auth-set-email": "5/min",
-    },
 }
 
 AUTH_USER_MODEL = "users.User"
@@ -214,8 +191,23 @@ DJOSER = {
     # Least-privilege on user endpoints, avoid user enumeration
     "HIDE_USERS": True,
     "PERMISSIONS": {
+        # Endpoints de utilizador
         "user": ["djoser.permissions.CurrentUserOrAdmin"],
         "user_list": ["djoser.permissions.CurrentUserOrAdmin"],
+        "user_create": ["rest_framework.permissions.AllowAny"],
+        # Ações de ativação
+        "activation": ["rest_framework.permissions.AllowAny"],
+        "resend_activation": ["rest_framework.permissions.AllowAny"],
+        # Password
+        "set_password": ["rest_framework.permissions.IsAuthenticated"],
+        "reset_password": ["rest_framework.permissions.AllowAny"],
+        "reset_password_confirm": ["rest_framework.permissions.AllowAny"],
+        # Username/email  (o teu Djoser expõe reset_email; mantemos ambos por segurança)
+        "set_username": ["rest_framework.permissions.IsAuthenticated"],
+        "reset_username": ["rest_framework.permissions.AllowAny"],
+        "reset_username_confirm": ["rest_framework.permissions.AllowAny"],
+        "reset_email": ["rest_framework.permissions.AllowAny"],
+        "reset_email_confirm": ["rest_framework.permissions.AllowAny"],
     },
     "SERIALIZERS": {
         "user_create": "users.serializers.UserCreateSerializer",
