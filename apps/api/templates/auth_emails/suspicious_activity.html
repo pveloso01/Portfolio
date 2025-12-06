@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Security Alert</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h2 style="color: #dc3545;">Security Alert</h2>
+        <p>We detected {{ activity_type }} on your account:</p>
+        <ul>
+            <li>Time: {{ timestamp }}</li>
+            <li>IP Address: {{ ip_address }}</li>
+            <li>Location: {{ location }}</li>
+        </ul>
+        <p>If this was you, no action is needed. If you don't recognize this activity, please reset your password immediately.</p>
+    </div>
+</body>
+</html>
+
