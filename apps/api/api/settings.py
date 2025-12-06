@@ -194,6 +194,16 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
+# --- CSRF Protection ---
+CSRF_COOKIE_SECURE = not DEBUG  # True in production (HTTPS only)
+CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SAMESITE = "Strict"
+CSRF_TRUSTED_ORIGINS = [
+    origin
+    for origin in os.environ.get("CSRF_TRUSTED_ORIGINS", "http://localhost:3000").split(",")
+    if origin
+]
+
 # --- Email (DEV) ---
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
