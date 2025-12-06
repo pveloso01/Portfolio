@@ -52,15 +52,17 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
+    "pwned_passwords_django",
     "drf_spectacular",
     "corsheaders",
+    "djoser",
     "core",
     "users",
 ]
 
 MIDDLEWARE = [
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "corsheaders.middleware.CorsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -75,7 +77,7 @@ ROOT_URLCONF = "api.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -111,12 +113,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "OPTIONS": {"min_length": 12},
     },
     {
         "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
+    {
+        "NAME": "pwned_passwords_django.validators.PwnedPasswordsValidator",
     },
 ]
 
@@ -149,20 +155,6 @@ REST_FRAMEWORK = {
     ),
     # OpenAPI via drf-spectacular
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-    # Throttling base (anti-abuso)
-    "DEFAULT_THROTTLE_CLASSES": [
-        "rest_framework.throttling.AnonRateThrottle",
-        "rest_framework.throttling.UserRateThrottle",
-        "rest_framework.throttling.ScopedRateThrottle",
-    ],
-    "DEFAULT_THROTTLE_RATES": {
-        "anon": "60/min",
-        "user": "120/min",
-        "auth-login": "5/min",
-        "auth-refresh": "30/min",
-        "auth-verify": "60/min",
-        "auth-logout": "30/min",
-    },
 }
 
 AUTH_USER_MODEL = "users.User"
@@ -176,12 +168,53 @@ SIMPLE_JWT = {
 }
 
 DJOSER = {
+    # Use email for login (your custom User should have USERNAME_FIELD = "email")
     "LOGIN_FIELD": "email",
-    "USER_CREATE_PASSWORD_RETYPE": True,
+    # Signup UX & safety
+    "USER_CREATE_PASSWORD_RETYPE": True,  # require re_password on /users/
+    "SET_PASSWORD_RETYPE": True,  # require re_new_password on /users/set_password/
+    "PASSWORD_RESET_CONFIRM_RETYPE": True,  # require re_new_password on reset confirm
+    "PASSWORD_CHANGED_EMAIL_CONFIRMATION": True,
+    "USERNAME_CHANGED_EMAIL_CONFIRMATION": True,
+    "PASSWORD_RESET_SHOW_EMAIL_NOT_FOUND": False,  # anti-enumeração (manter False)
+    # Email-driven flows (frontend links MUST include {uid} and {token})
+    "SEND_ACTIVATION_EMAIL": True,
+    "SEND_CONFIRMATION_EMAIL": True,
+    "ACTIVATION_URL": "activate/{uid}/{token}",
+    "PASSWORD_RESET_CONFIRM_URL": "reset-password/{uid}/{token}",
+    "USERNAME_RESET_CONFIRM_URL": "reset-email/{uid}/{token}",
+    # Optional (nice to have; used to build URLs in emails)
+    "EMAIL_FRONTEND_DOMAIN": os.getenv("FRONTEND_DOMAIN", "localhost:3000"),
+    "EMAIL_FRONTEND_PROTOCOL": os.getenv("FRONTEND_PROTOCOL", "http"),
+    # JWT-only: disable DRF Token model to avoid confusion/extra tables
+    "TOKEN_MODEL": None,
+    # Least-privilege on user endpoints, avoid user enumeration
+    "HIDE_USERS": True,
+    "PERMISSIONS": {
+        # Endpoints de utilizador
+        "user": ["djoser.permissions.CurrentUserOrAdmin"],
+        "user_list": ["djoser.permissions.CurrentUserOrAdmin"],
+        "user_create": ["rest_framework.permissions.AllowAny"],
+        # Ações de ativação
+        "activation": ["rest_framework.permissions.AllowAny"],
+        "resend_activation": ["rest_framework.permissions.AllowAny"],
+        # Password
+        "set_password": ["rest_framework.permissions.IsAuthenticated"],
+        "reset_password": ["rest_framework.permissions.AllowAny"],
+        "reset_password_confirm": ["rest_framework.permissions.AllowAny"],
+        # Username/email  (o teu Djoser expõe reset_email; mantemos ambos por segurança)
+        "set_username": ["rest_framework.permissions.IsAuthenticated"],
+        "reset_username": ["rest_framework.permissions.AllowAny"],
+        "reset_username_confirm": ["rest_framework.permissions.AllowAny"],
+        "reset_email": ["rest_framework.permissions.AllowAny"],
+        "reset_email_confirm": ["rest_framework.permissions.AllowAny"],
+    },
     "SERIALIZERS": {
         "user_create": "users.serializers.UserCreateSerializer",
         "user": "users.serializers.UserSerializer",
         "current_user": "users.serializers.UserSerializer",
+        "set_password": "users.serializers.SetPasswordAndBlacklistSerializer",
+        "set_password_retype": "users.serializers.SetPasswordAndBlacklistSerializer",
     },
 }
 
@@ -200,3 +233,6 @@ CORS_ALLOWED_ORIGINS = [
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+# --- Email (DEV) ---
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

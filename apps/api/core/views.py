@@ -4,6 +4,7 @@ from django.http import JsonResponse
 
 
 def healthz(request):
+    """Health check endpoint for load balancers/monitoring."""
     db_ok = True
     try:
         connections["default"].cursor()
