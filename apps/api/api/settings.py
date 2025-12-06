@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     "pwned_passwords_django",
     "drf_spectacular",
     "corsheaders",
-    "djoser",
     "core",
     "users",
 ]
@@ -162,60 +161,9 @@ AUTH_USER_MODEL = "users.User"
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
-    "ROTATE_REFRESH_TOKENS": True,  # new refresh issued on refresh
-    "BLACKLIST_AFTER_ROTATION": True,  # old refresh goes to blacklist
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
     "AUTH_HEADER_TYPES": ("Bearer",),
-}
-
-DJOSER = {
-    # Use email for login (your custom User should have USERNAME_FIELD = "email")
-    "LOGIN_FIELD": "email",
-    # Signup UX & safety
-    "USER_CREATE_PASSWORD_RETYPE": True,  # require re_password on /users/
-    "SET_PASSWORD_RETYPE": True,  # require re_new_password on /users/set_password/
-    "PASSWORD_RESET_CONFIRM_RETYPE": True,  # require re_new_password on reset confirm
-    "PASSWORD_CHANGED_EMAIL_CONFIRMATION": True,
-    "USERNAME_CHANGED_EMAIL_CONFIRMATION": True,
-    "PASSWORD_RESET_SHOW_EMAIL_NOT_FOUND": False,  # anti-enumeração (manter False)
-    # Email-driven flows (frontend links MUST include {uid} and {token})
-    "SEND_ACTIVATION_EMAIL": True,
-    "SEND_CONFIRMATION_EMAIL": True,
-    "ACTIVATION_URL": "activate/{uid}/{token}",
-    "PASSWORD_RESET_CONFIRM_URL": "reset-password/{uid}/{token}",
-    "USERNAME_RESET_CONFIRM_URL": "reset-email/{uid}/{token}",
-    # Optional (nice to have; used to build URLs in emails)
-    "EMAIL_FRONTEND_DOMAIN": os.getenv("FRONTEND_DOMAIN", "localhost:3000"),
-    "EMAIL_FRONTEND_PROTOCOL": os.getenv("FRONTEND_PROTOCOL", "http"),
-    # JWT-only: disable DRF Token model to avoid confusion/extra tables
-    "TOKEN_MODEL": None,
-    # Least-privilege on user endpoints, avoid user enumeration
-    "HIDE_USERS": True,
-    "PERMISSIONS": {
-        # Endpoints de utilizador
-        "user": ["djoser.permissions.CurrentUserOrAdmin"],
-        "user_list": ["djoser.permissions.CurrentUserOrAdmin"],
-        "user_create": ["rest_framework.permissions.AllowAny"],
-        # Ações de ativação
-        "activation": ["rest_framework.permissions.AllowAny"],
-        "resend_activation": ["rest_framework.permissions.AllowAny"],
-        # Password
-        "set_password": ["rest_framework.permissions.IsAuthenticated"],
-        "reset_password": ["rest_framework.permissions.AllowAny"],
-        "reset_password_confirm": ["rest_framework.permissions.AllowAny"],
-        # Username/email  (o teu Djoser expõe reset_email; mantemos ambos por segurança)
-        "set_username": ["rest_framework.permissions.IsAuthenticated"],
-        "reset_username": ["rest_framework.permissions.AllowAny"],
-        "reset_username_confirm": ["rest_framework.permissions.AllowAny"],
-        "reset_email": ["rest_framework.permissions.AllowAny"],
-        "reset_email_confirm": ["rest_framework.permissions.AllowAny"],
-    },
-    "SERIALIZERS": {
-        "user_create": "users.serializers.UserCreateSerializer",
-        "user": "users.serializers.UserSerializer",
-        "current_user": "users.serializers.UserSerializer",
-        "set_password": "users.serializers.SetPasswordAndBlacklistSerializer",
-        "set_password_retype": "users.serializers.SetPasswordAndBlacklistSerializer",
-    },
 }
 
 SPECTACULAR_SETTINGS = {
