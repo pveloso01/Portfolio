@@ -153,8 +153,14 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
-    # OpenAPI via drf-spectacular
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_THROTTLE_RATES": {
+        "login": "5/hour",
+        "token_refresh": "10/hour",
+        "password_reset": "3/hour",
+        "password_change": "5/day",
+        "email_verification": "3/hour",
+    },
 }
 
 AUTH_USER_MODEL = "users.User"
