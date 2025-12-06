@@ -206,6 +206,8 @@ CSRF_TRUSTED_ORIGINS = [
 
 # --- Email (DEV) ---
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "noreply@portfolio.com")
+FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://localhost:3000")
 
 # --- IP Whitelist (Security) ---
 IP_WHITELIST_ENABLED = os.environ.get("IP_WHITELIST_ENABLED", "False") == "True"
