@@ -159,6 +159,11 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = "users.User"
 
+AUTHENTICATION_BACKENDS = [
+    "authentication.backends.EmailAuthenticationBackend",
+    "django.contrib.auth.backends.ModelBackend",  # Fallback for admin
+]
+
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
