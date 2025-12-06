@@ -196,3 +196,12 @@ INTERNAL_IPS = [
 
 # --- Email (DEV) ---
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# --- IP Whitelist (Security) ---
+IP_WHITELIST_ENABLED = os.environ.get("IP_WHITELIST_ENABLED", "False") == "True"
+IP_WHITELIST_ADDRESSES = [
+    ip.strip()
+    for ip in os.environ.get("IP_WHITELIST_ADDRESSES", "127.0.0.1,::1").split(",")
+    if ip.strip()
+]
+IP_WHITELIST_PROTECTED_PATHS = ["/admin/", "/api/v1/auth/"]
