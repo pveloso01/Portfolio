@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import heroContent from "@/lib/data/hero-content.json";
+import { fadeIn, slideUp, staggerContainer } from "@/lib/utils/animations";
 
 export function HeroSection() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -40,41 +42,59 @@ export function HeroSection() {
       <div className="absolute inset-0 gradient-bg opacity-20" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(59,130,246,0.1),rgba(0,0,0,0))]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+      <motion.div
+        className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40"
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+      >
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-base font-semibold leading-7 text-primary animate-fade-in">
+          <motion.p className="text-base font-semibold leading-7 text-primary" variants={fadeIn}>
             {heroContent.greeting}
-          </p>
-          <h1 className="mt-4 text-5xl font-bold tracking-tight text-foreground sm:text-7xl animate-slide-in-up">
+          </motion.p>
+          <motion.h1
+            className="mt-4 text-5xl font-bold tracking-tight text-foreground sm:text-7xl"
+            variants={slideUp}
+          >
             <span className="text-gradient">{heroContent.name}</span>
-          </h1>
-          <div className="mt-6 h-12 sm:h-16">
+          </motion.h1>
+          <motion.div className="mt-6 h-12 sm:h-16" variants={slideUp}>
             <h2 className="text-2xl font-semibold text-muted-foreground sm:text-3xl">
               {displayedText}
-              <span className="inline-block w-0.5 h-8 bg-primary ml-1 animate-pulse" />
+              <motion.span
+                className="inline-block w-0.5 h-8 bg-primary ml-1"
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
+              />
             </h2>
-          </div>
-          <p className="mt-6 text-lg leading-8 text-foreground/80 animate-slide-in-up">
+          </motion.div>
+          <motion.p className="mt-6 text-lg leading-8 text-foreground/80" variants={slideUp}>
             {heroContent.description}
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6 animate-slide-in-up">
-            <Button size="lg" asChild>
-              <Link href={heroContent.cta.primary.href}>{heroContent.cta.primary.text}</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href={heroContent.cta.secondary.href}>{heroContent.cta.secondary.text}</Link>
-            </Button>
-          </div>
+          </motion.p>
+          <motion.div className="mt-10 flex items-center justify-center gap-x-6" variants={slideUp}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button size="lg" asChild>
+                <Link href={heroContent.cta.primary.href}>{heroContent.cta.primary.text}</Link>
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button size="lg" variant="outline" asChild>
+                <Link href={heroContent.cta.secondary.href}>{heroContent.cta.secondary.text}</Link>
+              </Button>
+            </motion.div>
+          </motion.div>
 
           {/* Scroll indicator */}
-          <div className="mt-16 flex justify-center animate-fade-in">
+          <motion.div className="mt-16 flex justify-center" variants={fadeIn}>
             <div className="flex flex-col items-center gap-2">
               <p className="text-xs text-muted-foreground">Scroll to explore</p>
-              <svg
-                className="h-6 w-6 text-primary animate-bounce"
+              <motion.svg
+                className="h-6 w-6 text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
               >
                 <path
                   strokeLinecap="round"
@@ -82,11 +102,11 @@ export function HeroSection() {
                   strokeWidth={2}
                   d="M19 14l-7 7m0 0l-7-7m7 7V3"
                 />
-              </svg>
+              </motion.svg>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

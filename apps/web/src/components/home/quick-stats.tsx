@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { name: "Projects Completed", value: 25, suffix: "+" },
-  { name: "Years of Experience", value: 5, suffix: "+" },
-  { name: "Technologies Mastered", value: 15, suffix: "+" },
-  { name: "Client Satisfaction", value: 100, suffix: "%" },
+  { name: "Projects Completed", value: 10, suffix: "+" },
+  { name: "Years of Study", value: 5, suffix: "+" },
+  { name: "Technologies Used", value: 20, suffix: "+" },
+  { name: "Code Quality", value: 100, suffix: "%" },
 ];
 
 function useIntersectionObserver(ref: React.RefObject<HTMLElement>, options = {}) {
