@@ -1,5 +1,4 @@
 {
-  // Editor
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
@@ -12,14 +11,10 @@
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-
-  // TypeScript
   "typescript.tsdk": "apps/web/node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
-
-  // ESLint
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -27,16 +22,12 @@
     "typescriptreact"
   ],
   "eslint.workingDirectories": ["./apps/web"],
-
-  // Files
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
     "**/node_modules": true,
     "**/.next": true,
-    "**/out": true,
-    "**/__pycache__": true,
-    "**/*.pyc": true
+    "**/out": true
   },
   "search.exclude": {
     "**/node_modules": true,
@@ -46,8 +37,6 @@
     "**/coverage": true,
     "**/*.lock": true
   },
-
-  // Language-specific
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -70,20 +59,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "files.trimTrailingWhitespace": false
   },
-  "[python]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "charliermarsh.ruff"
-  },
-
-  // Tailwind CSS
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-
-  // Testing
   "vitest.enable": true,
-
-  // Git
   "git.ignoreLimitWarning": true
 }

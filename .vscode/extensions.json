@@ -1,37 +1,20 @@
 {
   "recommendations": [
-    // Essential
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss",
-
-    // TypeScript
     "usernamehw.errorlens",
     "yoavbls.pretty-ts-errors",
-
-    // Testing
     "vitest.explorer",
     "ms-playwright.playwright",
-
-    // Python (for backend)
-    "charliermarsh.ruff",
-    "ms-python.python",
-
-    // Git
     "eamodio.gitlens",
     "github.vscode-pull-request-github",
-
-    // Markdown
     "yzhang.markdown-all-in-one",
     "davidanson.vscode-markdownlint",
-
-    // Utilities
     "christian-kohler.path-intellisense",
     "visualstudioexptteam.vscodeintellicode",
     "streetsidesoftware.code-spell-checker",
     "gruntfuggly.todo-tree",
-
-    // Optional but useful
     "github.copilot",
     "formulahendry.auto-rename-tag",
     "naumovs.color-highlight"
