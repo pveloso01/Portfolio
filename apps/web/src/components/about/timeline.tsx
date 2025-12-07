@@ -34,28 +34,30 @@ export function Timeline() {
             </svg>
             Work Experience
           </h3>
-          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[8.75rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/50 before:to-transparent">
+          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[10rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/50 before:to-transparent">
             {workExperience.map((exp) => (
               <div key={exp.id} className="relative group">
-                <div className="md:flex items-center md:space-x-4 mb-1">
-                  <div className="flex items-center space-x-4 md:space-x-2 md:space-x-reverse">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-muted border-2 border-primary shadow-lg group-hover:scale-110 transition-transform">
+                <div className="md:flex items-start md:space-x-6 mb-3">
+                  <div className="flex items-start space-x-6 md:space-x-4 md:space-x-reverse">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-muted border-2 border-primary shadow-lg group-hover:scale-110 transition-transform flex-shrink-0">
                       <div className="w-3 h-3 rounded-full bg-primary" />
                     </div>
-                    <time className="font-medium text-sm text-primary md:w-28">
+                    <time className="font-medium text-sm text-primary md:w-32 pt-1.5">
                       {formatDate(exp.startDate, false)} - {formatDate(exp.endDate, exp.current)}
                     </time>
                   </div>
-                  <div className="text-foreground/40 hidden md:block">•</div>
-                  <div className="font-bold text-foreground group-hover:text-primary transition-colors">
+                  <div className="text-foreground/40 hidden md:block pt-1.5">•</div>
+                  <div className="font-bold text-foreground group-hover:text-primary transition-colors pt-1.5">
                     {exp.title}
                   </div>
                 </div>
-                <div className="ml-14 md:ml-44">
-                  <div className="text-sm text-muted-foreground mb-1">
+                <div className="ml-16 md:ml-52">
+                  <div className="text-sm text-muted-foreground mb-2">
                     {exp.company} • {exp.location}
                   </div>
-                  <div className="text-sm text-foreground/80">{exp.description}</div>
+                  <div className="text-sm text-foreground/80 leading-relaxed">
+                    {exp.description}
+                  </div>
                 </div>
               </div>
             ))}
@@ -87,28 +89,30 @@ export function Timeline() {
             </svg>
             Education
           </h3>
-          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[8.75rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-secondary/50 before:to-transparent">
+          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[10rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-secondary/50 before:to-transparent">
             {education.map((exp) => (
               <div key={exp.id} className="relative group">
-                <div className="md:flex items-center md:space-x-4 mb-1">
-                  <div className="flex items-center space-x-4 md:space-x-2 md:space-x-reverse">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-muted border-2 border-secondary shadow-lg group-hover:scale-110 transition-transform">
+                <div className="md:flex items-start md:space-x-6 mb-3">
+                  <div className="flex items-start space-x-6 md:space-x-4 md:space-x-reverse">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-muted border-2 border-secondary shadow-lg group-hover:scale-110 transition-transform flex-shrink-0">
                       <div className="w-3 h-3 rounded-full bg-secondary" />
                     </div>
-                    <time className="font-medium text-sm text-secondary md:w-28">
+                    <time className="font-medium text-sm text-secondary md:w-32 pt-1.5">
                       {formatDate(exp.startDate, false)} - {formatDate(exp.endDate, exp.current)}
                     </time>
                   </div>
-                  <div className="text-foreground/40 hidden md:block">•</div>
-                  <div className="font-bold text-foreground group-hover:text-secondary transition-colors">
+                  <div className="text-foreground/40 hidden md:block pt-1.5">•</div>
+                  <div className="font-bold text-foreground group-hover:text-secondary transition-colors pt-1.5">
                     {exp.title}
                   </div>
                 </div>
-                <div className="ml-14 md:ml-44">
-                  <div className="text-sm text-muted-foreground mb-1">
+                <div className="ml-16 md:ml-52">
+                  <div className="text-sm text-muted-foreground mb-2">
                     {exp.company} • {exp.location}
                   </div>
-                  <div className="text-sm text-foreground/80">{exp.description}</div>
+                  <div className="text-sm text-foreground/80 leading-relaxed">
+                    {exp.description}
+                  </div>
                 </div>
               </div>
             ))}
