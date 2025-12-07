@@ -9,6 +9,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # Authentication endpoints
     path("api/v1/auth/", include("authentication.urls")),
+    # Contact form
+    path("api/v1/contact/", include("contact.urls")),
     # Healthcheck (K8s/LB) e OpenAPI + Swagger
     path("healthz/", healthz),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),

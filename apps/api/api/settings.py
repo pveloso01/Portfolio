@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "core",
     "users",
     "authentication",
+    "contact",
 ]
 
 MIDDLEWARE = [
@@ -207,6 +208,7 @@ CSRF_TRUSTED_ORIGINS = [
 # --- Email (DEV) ---
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "noreply@portfolio.com")
+CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL", "pedrovelosofernandes@outlook.com")
 FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://localhost:3000")
 
 # --- IP Whitelist (Security) ---

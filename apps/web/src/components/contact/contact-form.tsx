@@ -44,20 +44,39 @@ export function ContactForm() {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      // TODO: Replace with your backend API endpoint or email service
-      // For now, this simulates a submission
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/v1/contact/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        },
+      );
 
-      // Success
-      setSubmitStatus({
-        type: "success",
-        message: "Thank you for your message! I'll get back to you as soon as possible.",
-      });
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      const data = await response.json();
+
+      if (response.ok) {
+        // Success
+        setSubmitStatus({
+          type: "success",
+          message: data.message || "Thank you for your message! I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        // Server error
+        setSubmitStatus({
+          type: "error",
+          message:
+            data.error ||
+            "Oops! Something went wrong. Please try again or reach out directly via email.",
+        });
+      }
     } catch {
       setSubmitStatus({
         type: "error",
-        message: "Oops! Something went wrong. Please try again or reach out directly via email.",
+        message: "Unable to send message. Please try again or email me directly.",
       });
     } finally {
       setIsSubmitting(false);
