@@ -36,15 +36,12 @@ export default function ContactPage() {
                 to reach out about projects, collaborations, or just to say hello!
               </p>
 
-              <a
-                href="mailto:pedrovelosofernandes@outlook.com?subject=Contact from Portfolio"
-                className="block"
-              >
-                <Button size="lg" className="w-full md:w-auto">
+              <Button size="lg" className="w-full md:w-auto" asChild>
+                <a href="mailto:pedrovelosofernandes@outlook.com?subject=Contact from Portfolio">
                   <Send className="w-4 h-4 mr-2" />
                   Email Me
-                </Button>
-              </a>
+                </a>
+              </Button>
 
               <div className="pt-4 border-t border-border">
                 <p className="text-sm text-muted-foreground">
