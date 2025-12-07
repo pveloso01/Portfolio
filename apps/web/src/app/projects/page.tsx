@@ -10,7 +10,7 @@ import { filterProjects, getUniqueCategories } from "@/lib/utils/project-filters
 const data = projectsData as Project[];
 
 export default function ProjectsPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>("all");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
 
   const categories = getUniqueCategories(data);

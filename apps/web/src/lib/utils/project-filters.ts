@@ -2,12 +2,12 @@ import type { Project } from "@/lib/types/project";
 
 export function filterProjects(
   projects: Project[],
-  category: string | null,
+  category: string,
   searchQuery: string,
 ): Project[] {
   let filtered = projects;
 
-  if (category && category !== "all") {
+  if (category !== "all") {
     filtered = filtered.filter((project) => project.category === category);
   }
 

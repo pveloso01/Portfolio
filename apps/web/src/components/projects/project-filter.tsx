@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 
 interface ProjectFilterProps {
   categories: string[];
-  selectedCategory: string | null;
+  selectedCategory: string;
   searchQuery: string;
-  onCategoryChange: (category: string | null) => void;
+  onCategoryChange: (category: string) => void;
   onSearchChange: (query: string) => void;
 }
 
