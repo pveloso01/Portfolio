@@ -47,22 +47,21 @@
     "title": "Atlas Investor",
     "slug": "atlas-investor",
     "description": "Geospatial real estate investment platform for analyzing, ranking, and optimizing property deals across Portugal using ROI, rental yield, zoning data, and development feasibility metrics.",
-    "longDescription": "Advanced geospatial platform designed to revolutionize real estate investment analysis in Portugal. The system combines property data, zoning regulations, market trends, and geographic information to provide comprehensive investment insights.\n\nThe platform features sophisticated algorithms that calculate ROI, rental yield projections, and development feasibility scores. It integrates multiple data sources including municipal zoning maps, historical transaction data, and demographic information to provide a holistic view of investment opportunities.\n\nUtilizing Python's geospatial libraries and advanced data visualization techniques, the platform presents complex information in an intuitive, map-based interface that allows investors to identify opportunities at a glance.",
+    "longDescription": "Advanced geospatial platform designed to revolutionize real estate investment analysis in Portugal. The system combines property data, zoning regulations, market trends, and geographic information to provide comprehensive investment insights.\n\nThe platform features sophisticated algorithms that calculate ROI, rental yield projections, and development feasibility scores. It integrates multiple data sources including municipal zoning maps, historical transaction data, and demographic information to provide a holistic view of investment opportunities.\n\nUtilizing Python's geospatial libraries and advanced data visualization techniques, the platform presents complex information in an intuitive, map-based interface that allows investors to identify opportunities at a glance. Currently in active development with ongoing feature enhancements and data pipeline improvements.",
     "category": "Data Analysis",
     "tags": ["Python", "Geospatial Analysis", "Real Estate", "Data Visualization"],
     "featured": true,
     "image": "/placeholder-project-2.jpg",
     "github": "https://github.com/pveloso01/Atlas-Investor",
     "demo": null,
-    "date": "2023-07-01",
-    "endDate": "2024-01-01",
-    "status": "completed",
+    "date": "2025-11-01",
+    "status": "in-progress",
     "highlights": [
-      "Analyzed 10,000+ properties across Portugal with comprehensive investment metrics",
-      "Integrated municipal zoning data with real-time market information",
-      "Created interactive geospatial visualizations for opportunity identification",
-      "Developed custom scoring algorithm combining 15+ investment criteria",
-      "Built automated data pipeline for daily property data updates"
+      "Developing comprehensive property analysis algorithms for Portuguese market",
+      "Integrating municipal zoning data with real-time market information",
+      "Creating interactive geospatial visualizations for opportunity identification",
+      "Building custom scoring algorithm combining multiple investment criteria",
+      "Implementing automated data pipeline for property data updates"
     ],
     "challenges": [
       "Aggregating and normalizing data from multiple inconsistent sources",
@@ -70,9 +69,9 @@
       "Developing accurate ROI models accounting for regional market variations",
       "Creating intuitive visualizations for complex multi-dimensional data"
     ],
-    "outcome": "Successfully identified high-potential investment opportunities with 30% better ROI predictions compared to traditional analysis methods. The platform has been used to evaluate investment decisions totaling over €2M in property value.",
+    "outcome": "Active development focused on building a comprehensive real estate investment analysis platform. The project aims to provide data-driven insights for property investors in Portugal.",
     "role": "Full-Stack Developer & Data Analyst",
-    "duration": "6 months",
+    "duration": "Ongoing since November 2025",
     "teamSize": "Solo project"
   },
   {
@@ -80,21 +79,21 @@
     "title": "PopcornGuess",
     "slug": "popcornguess",
     "description": "Fast daily challenge about streaming culture. Players solve clues from frames, audio, and quotes to guess movies, series, creators, and characters.",
-    "longDescription": "Engaging daily puzzle game that challenges players' knowledge of movies, TV series, content creators, and characters. The platform presents visual, audio, and textual clues that players must decode to identify the correct answer.\n\nBuilt with Django for robust backend functionality, the game features a sophisticated clue generation system, user authentication, scoring mechanics, and social sharing capabilities. Each day presents a new challenge across different categories, keeping the content fresh and engaging.\n\nThe platform includes an admin interface for content management, automated daily puzzle scheduling, and a leaderboard system to foster community engagement and competition. Currently in active development with ongoing feature additions and content updates.",
+    "longDescription": "Engaging daily puzzle game that challenges players' knowledge of movies, TV series, content creators, and characters. The platform presents visual, audio, and textual clues that players must decode to identify the correct answer.\n\nBuilt with Django for robust backend functionality, the game features a sophisticated clue generation system, user authentication, scoring mechanics, and social sharing capabilities. Each day presents a new challenge across different categories, keeping the content fresh and engaging.\n\nThe platform is in early development, focusing on core gameplay mechanics, content management systems, and user experience design. Currently building the foundation for automated daily puzzle scheduling and leaderboard functionality.",
     "category": "Web Development",
     "tags": ["Python", "Django", "Game Development", "Entertainment"],
     "featured": true,
     "image": "/placeholder-project-3.jpg",
     "github": "https://github.com/pveloso01/PopcornGuess",
     "demo": null,
-    "date": "2023-03-01",
+    "date": "2025-12-01",
     "status": "in-progress",
     "highlights": [
-      "Developed engaging gameplay mechanics with progressive hint system",
-      "Implemented user authentication and profile management with Django",
-      "Created content management system for easy puzzle creation and scheduling",
-      "Built responsive design supporting mobile and desktop experiences",
-      "Integrated social sharing features to boost viral growth"
+      "Developing engaging gameplay mechanics with progressive hint system",
+      "Implementing user authentication and profile management with Django",
+      "Creating content management system for puzzle creation and scheduling",
+      "Building responsive design supporting mobile and desktop experiences",
+      "Planning social sharing features for viral growth"
     ],
     "challenges": [
       "Designing clue difficulty progression to keep players engaged without frustration",
@@ -102,42 +101,41 @@
       "Preventing answer spoilers while enabling social sharing",
       "Balancing game difficulty to appeal to both casual and hardcore fans"
     ],
-    "outcome": "Active development with positive user feedback from beta testing. The platform demonstrates strong engagement metrics and provides a foundation for potential monetization through premium features or advertising.",
+    "outcome": "Recently started development focused on creating an engaging daily puzzle experience. The project aims to build a vibrant community around streaming culture trivia.",
     "role": "Full-Stack Developer & Game Designer",
-    "duration": "Ongoing since March 2023",
+    "duration": "Ongoing since December 2025",
     "teamSize": "Solo project"
   },
   {
     "id": "4",
     "title": "Travel Planner",
     "slug": "travel-planner",
-    "description": "Plan trips with maps, POIs, and weather integration. Python web application with CI/CD pipeline for automated testing and deployment.",
-    "longDescription": "Comprehensive travel planning application that helps users organize their trips with integrated maps, points of interest, and real-time weather information. The platform allows users to create detailed itineraries, discover attractions, and plan their journeys based on weather forecasts.\n\nBuilt with Python and modern web frameworks, the application features a clean, intuitive interface for trip planning. It integrates with mapping services for location search and visualization, and weather APIs for forecast information.\n\nThe project emphasizes software engineering best practices with a complete CI/CD pipeline, automated testing, code quality checks, and streamlined deployment process.",
+    "description": "Trip planning application with maps, POIs, and weather integration. Currently in ideation and early planning phase.",
+    "longDescription": "Comprehensive travel planning application concept that aims to help users organize their trips with integrated maps, points of interest, and real-time weather information. The platform will allow users to create detailed itineraries, discover attractions, and plan their journeys based on weather forecasts.\n\nCurrently in the ideation and planning phase, the project focuses on defining core features, user experience flows, and technical architecture. Planning to build with Python and modern web frameworks, featuring a clean, intuitive interface for trip planning with integrations to mapping services and weather APIs.\n\nThe project will emphasize software engineering best practices with a complete CI/CD pipeline, automated testing, code quality checks, and streamlined deployment process.",
     "category": "Web Development",
     "tags": ["Python", "Web Development", "CI/CD", "Maps API", "Weather API"],
     "featured": false,
     "image": "/placeholder-project-4.jpg",
     "github": "https://github.com/pveloso01/Travel-Planner",
     "demo": null,
-    "date": "2023-03-01",
-    "endDate": "2023-06-01",
-    "status": "completed",
+    "date": "2025-08-01",
+    "status": "in-progress",
     "highlights": [
-      "Integrated multiple third-party APIs for maps, POIs, and weather data",
-      "Implemented comprehensive test suite with 80%+ code coverage",
-      "Built automated CI/CD pipeline with GitHub Actions",
-      "Created responsive UI supporting mobile and desktop devices",
-      "Developed itinerary sharing functionality for collaborative planning"
+      "Planning integration with multiple third-party APIs for maps, POIs, and weather",
+      "Designing user experience flows for intuitive trip planning",
+      "Architecting CI/CD pipeline for automated testing and deployment",
+      "Planning responsive UI supporting mobile and desktop devices",
+      "Conceptualizing itinerary sharing functionality for collaborative planning"
     ],
     "challenges": [
-      "Managing rate limits and costs for multiple third-party API integrations",
-      "Synchronizing data between different mapping and weather services",
-      "Ensuring responsive performance with large amounts of map data",
-      "Implementing reliable testing for external API dependencies"
+      "Defining optimal feature set for MVP while maintaining extensibility",
+      "Planning for rate limits and costs across multiple third-party API integrations",
+      "Designing data synchronization strategy between mapping and weather services",
+      "Ensuring planned architecture supports responsive performance with large datasets"
     ],
-    "outcome": "Delivered production-ready travel planning application with professional development practices. The CI/CD pipeline ensures reliable deployments and maintains code quality throughout the development lifecycle.",
+    "outcome": "Project currently in ideation phase, focusing on requirements gathering, technical planning, and architecture design. Development to begin once core feature set and technical approach are finalized.",
     "role": "Full-Stack Developer",
-    "duration": "3 months",
+    "duration": "Ongoing since August 2025 (Ideation Phase)",
     "teamSize": "Solo project"
   },
   {
@@ -145,22 +143,21 @@
     "title": "PhotoPack",
     "slug": "photopack",
     "description": "Marketplace for photographers to sell watermarked photo packs, with online payments and automatic high-res delivery by email.",
-    "longDescription": "E-commerce platform specifically designed for photographers to monetize their work by selling photo packs. The marketplace features watermarked previews, secure payment processing, and automated high-resolution delivery system.\n\nBuilt with Django, the platform handles the complete sales workflow from browsing and purchasing to payment processing and digital delivery. Photographers can upload their photos, organize them into packs, set prices, and manage their inventory through an intuitive dashboard.\n\nThe system automatically generates watermarked previews for public viewing while keeping original high-resolution files secure. Upon successful payment, customers receive instant email delivery of their purchased photo packs.",
+    "longDescription": "E-commerce platform specifically designed for photographers to monetize their work by selling photo packs. The marketplace features watermarked previews, secure payment processing, and automated high-resolution delivery system.\n\nBuilt with Django, the platform handles the complete sales workflow from browsing and purchasing to payment processing and digital delivery. Photographers can upload their photos, organize them into packs, set prices, and manage their inventory through an intuitive dashboard.\n\nThe system automatically generates watermarked previews for public viewing while keeping original high-resolution files secure. Upon successful payment, customers receive instant email delivery of their purchased photo packs. Currently in active development implementing core e-commerce functionality.",
     "category": "E-commerce",
     "tags": ["Python", "Django", "E-commerce", "Payment Integration", "Email"],
     "featured": false,
     "image": "/placeholder-project-5.jpg",
     "github": "https://github.com/pveloso01/PhotoPack",
     "demo": null,
-    "date": "2022-06-01",
-    "endDate": "2022-11-01",
-    "status": "completed",
+    "date": "2025-12-01",
+    "status": "in-progress",
     "highlights": [
-      "Implemented secure payment processing with major payment gateways",
-      "Built automated watermarking system for preview generation",
-      "Created instant digital delivery system via email",
-      "Developed photographer dashboard for content and sales management",
-      "Implemented customer order history and download management"
+      "Implementing secure payment processing with major payment gateways",
+      "Building automated watermarking system for preview generation",
+      "Creating instant digital delivery system via email",
+      "Developing photographer dashboard for content and sales management",
+      "Implementing customer order history and download management"
     ],
     "challenges": [
       "Processing and storing high-resolution images efficiently",
@@ -168,9 +165,9 @@
       "Handling payment processing and refunds reliably",
       "Optimizing image delivery for large file sizes"
     ],
-    "outcome": "Launched functional e-commerce platform enabling photographers to monetize their work. The platform demonstrates complete e-commerce functionality including payment processing, digital delivery, and user management.",
+    "outcome": "Recently started development of an e-commerce platform for photographers. The project focuses on building secure payment processing, digital delivery, and user management systems.",
     "role": "Full-Stack Developer",
-    "duration": "5 months",
+    "duration": "Ongoing since December 2025",
     "teamSize": "Solo project"
   }
 ]
