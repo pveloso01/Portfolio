@@ -34,31 +34,31 @@ export function Timeline() {
             </svg>
             Work Experience
           </h3>
-          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[10rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/50 before:to-transparent">
+          <div className="space-y-8">
             {workExperience.map((exp) => (
-              <div key={exp.id} className="relative group">
-                <div className="md:flex items-start md:space-x-6 mb-3">
-                  <div className="flex items-start space-x-6 md:space-x-4 md:space-x-reverse">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-muted border-2 border-primary shadow-lg group-hover:scale-110 transition-transform flex-shrink-0">
-                      <div className="w-3 h-3 rounded-full bg-primary" />
-                    </div>
-                    <time className="font-medium text-sm text-primary md:w-32 pt-1.5">
-                      {formatDate(exp.startDate, false)} - {formatDate(exp.endDate, exp.current)}
-                    </time>
-                  </div>
-                  <div className="text-foreground/40 hidden md:block pt-1.5">•</div>
-                  <div className="font-bold text-foreground group-hover:text-primary transition-colors pt-1.5">
-                    {exp.title}
-                  </div>
+              <div
+                key={exp.id}
+                className="relative pl-8 pb-8 border-l-2 border-primary/30 last:border-l-0 last:pb-0 group hover:border-primary/60 transition-colors"
+              >
+                <div className="absolute -left-3 top-0 flex items-center justify-center w-6 h-6 rounded-full bg-background border-2 border-primary shadow-lg group-hover:scale-125 transition-transform">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
                 </div>
-                <div className="ml-16 md:ml-52">
-                  <div className="text-sm text-muted-foreground mb-2">
+
+                <div className="mb-3">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">
+                      {exp.title}
+                    </h4>
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-1">
                     {exp.company} • {exp.location}
                   </div>
-                  <div className="text-sm text-foreground/80 leading-relaxed">
-                    {exp.description}
-                  </div>
+                  <time className="text-xs font-medium text-primary">
+                    {formatDate(exp.startDate, false)} - {formatDate(exp.endDate, exp.current)}
+                  </time>
                 </div>
+
+                <div className="text-sm text-foreground/80 leading-relaxed">{exp.description}</div>
               </div>
             ))}
           </div>
@@ -89,31 +89,31 @@ export function Timeline() {
             </svg>
             Education
           </h3>
-          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[10rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-secondary/50 before:to-transparent">
+          <div className="space-y-8">
             {education.map((exp) => (
-              <div key={exp.id} className="relative group">
-                <div className="md:flex items-start md:space-x-6 mb-3">
-                  <div className="flex items-start space-x-6 md:space-x-4 md:space-x-reverse">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-muted border-2 border-secondary shadow-lg group-hover:scale-110 transition-transform flex-shrink-0">
-                      <div className="w-3 h-3 rounded-full bg-secondary" />
-                    </div>
-                    <time className="font-medium text-sm text-secondary md:w-32 pt-1.5">
-                      {formatDate(exp.startDate, false)} - {formatDate(exp.endDate, exp.current)}
-                    </time>
-                  </div>
-                  <div className="text-foreground/40 hidden md:block pt-1.5">•</div>
-                  <div className="font-bold text-foreground group-hover:text-secondary transition-colors pt-1.5">
-                    {exp.title}
-                  </div>
+              <div
+                key={exp.id}
+                className="relative pl-8 pb-8 border-l-2 border-secondary/30 last:border-l-0 last:pb-0 group hover:border-secondary/60 transition-colors"
+              >
+                <div className="absolute -left-3 top-0 flex items-center justify-center w-6 h-6 rounded-full bg-background border-2 border-secondary shadow-lg group-hover:scale-125 transition-transform">
+                  <div className="w-2 h-2 rounded-full bg-secondary" />
                 </div>
-                <div className="ml-16 md:ml-52">
-                  <div className="text-sm text-muted-foreground mb-2">
+
+                <div className="mb-3">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h4 className="font-bold text-foreground group-hover:text-secondary transition-colors">
+                      {exp.title}
+                    </h4>
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-1">
                     {exp.company} • {exp.location}
                   </div>
-                  <div className="text-sm text-foreground/80 leading-relaxed">
-                    {exp.description}
-                  </div>
+                  <time className="text-xs font-medium text-secondary">
+                    {formatDate(exp.startDate, false)} - {formatDate(exp.endDate, exp.current)}
+                  </time>
                 </div>
+
+                <div className="text-sm text-foreground/80 leading-relaxed">{exp.description}</div>
               </div>
             ))}
           </div>
