@@ -15,6 +15,8 @@ export function HeroSection() {
   // Typing animation effect
   useEffect(() => {
     const currentRole = heroContent.roles[currentRoleIndex];
+    if (!currentRole) return;
+
     const typingSpeed = isDeleting ? 50 : 100;
 
     const timeout = setTimeout(() => {
