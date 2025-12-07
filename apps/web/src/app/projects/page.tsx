@@ -38,11 +38,15 @@ export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [mounted, setMounted] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   // Ensure component is mounted to prevent hydration issues
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
+    // Mark as animated after mount to prevent re-animations
+    const timer = setTimeout(() => setHasAnimated(true), 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   // Use useMemo to ensure filtering is consistent and prevent unnecessary re-computations
@@ -104,27 +108,27 @@ export default function ProjectsPage() {
       {filteredProjects.length > 0 ? (
         <motion.div
           variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          initial={hasAnimated ? false : "hidden"}
+          animate={hasAnimated ? false : "visible"}
           className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
           {filteredProjects.map((project) => (
-            <motion.div key={project.id} variants={itemVariants}>
+            <motion.div
+              key={project.id}
+              variants={hasAnimated ? {} : itemVariants}
+              layout
+              transition={{ duration: 0.3 }}
+            >
               <ProjectCard project={project} />
             </motion.div>
           ))}
         </motion.div>
       ) : (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="py-12 text-center"
-        >
+        <div className="py-12 text-center">
           <p className="text-muted-foreground text-lg">
             No projects found matching your criteria.
           </p>
-        </motion.div>
+        </div>
       )}
     </div>
   );
