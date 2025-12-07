@@ -38,7 +38,7 @@ export function Timeline() {
             {workExperience.map((exp) => (
               <div
                 key={exp.id}
-                className="relative pl-8 pb-8 border-l-2 border-primary/30 last:border-l-0 last:pb-0 group hover:border-primary/60 transition-colors"
+                className="relative pl-8 pb-8 border-l-2 border-primary/30 group hover:border-primary/60 transition-colors"
               >
                 <div className="absolute -left-3 top-0 flex items-center justify-center w-6 h-6 rounded-full bg-background border-2 border-primary shadow-lg group-hover:scale-125 transition-transform">
                   <div className="w-2 h-2 rounded-full bg-primary" />
@@ -93,7 +93,7 @@ export function Timeline() {
             {education.map((exp) => (
               <div
                 key={exp.id}
-                className="relative pl-8 pb-8 border-l-2 border-secondary/30 last:border-l-0 last:pb-0 group hover:border-secondary/60 transition-colors"
+                className="relative pl-8 pb-8 border-l-2 border-secondary/30 group hover:border-secondary/60 transition-colors"
               >
                 <div className="absolute -left-3 top-0 flex items-center justify-center w-6 h-6 rounded-full bg-background border-2 border-secondary shadow-lg group-hover:scale-125 transition-transform">
                   <div className="w-2 h-2 rounded-full bg-secondary" />
