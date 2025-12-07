@@ -77,22 +77,33 @@ export default function ProjectsPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-      <div className="mx-auto mb-16 max-w-2xl text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mx-auto mb-16 max-w-2xl text-center"
+      >
         <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-6xl">
           Projects
         </h1>
         <p className="text-muted-foreground mt-6 text-lg leading-8">
           Explore my portfolio of Python, AI/ML, and web development projects
         </p>
-      </div>
+      </motion.div>
 
-      <ProjectFilter
-        categories={categories}
-        selectedCategory={selectedCategory}
-        searchQuery={searchQuery}
-        onCategoryChange={setSelectedCategory}
-        onSearchChange={setSearchQuery}
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <ProjectFilter
+          categories={categories}
+          selectedCategory={selectedCategory}
+          searchQuery={searchQuery}
+          onCategoryChange={setSelectedCategory}
+          onSearchChange={setSearchQuery}
+        />
+      </motion.div>
 
       {filteredProjects.length > 0 ? (
         <motion.div
