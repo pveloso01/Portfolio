@@ -1,4 +1,4 @@
-# 🚀 Portfolio Monorepo
+# 🚀 Portfolio
 
 [![CI](https://github.com/pveloso/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/pveloso/portfolio/actions/workflows/ci.yml)
 [![Deploy](https://github.com/pveloso/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/pveloso/portfolio/actions/workflows/deploy.yml)
@@ -60,13 +60,13 @@ This portfolio is designed to showcase professional development skills with:
 
 ### Infrastructure & DevOps
 
-| Category          | Technologies                     |
-| ----------------- | -------------------------------- |
-| **CI/CD**         | GitHub Actions                   |
-| **Hosting**       | GitHub Pages (Frontend)          |
-| **Quality Gates** | Lighthouse CI, Codecov           |
-| **Pre-commit**    | Gitleaks, ESLint, Prettier, Ruff |
-| **Dependencies**  | Dependabot                       |
+| Category          | Technologies               |
+| ----------------- | -------------------------- |
+| **CI/CD**         | GitHub Actions             |
+| **Hosting**       | GitHub Pages (Frontend)    |
+| **Quality Gates** | Lighthouse CI, Codecov     |
+| **Pre-commit**    | Gitleaks, ESLint, Prettier |
+| **Dependencies**  | Dependabot                 |
 
 ---
 

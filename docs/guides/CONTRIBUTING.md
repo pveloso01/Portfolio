@@ -277,10 +277,10 @@ describe('Button', () => {
 ### Scopes
 
 - `frontend`: Frontend code
-- `backend`: Backend code
-- `infra`: Infrastructure
 - `docs`: Documentation
 - `deps`: Dependencies
+- `ci`: CI/CD
+- `config`: Configuration
 - `ci`: CI/CD
 - `config`: Configuration files
 
@@ -288,7 +288,7 @@ describe('Button', () => {
 
 ```bash
 feat(frontend): Add dark mode toggle
-fix(backend): Resolve authentication bug
+fix(frontend): Resolve navigation bug
 docs(readme): Update installation instructions
 style(frontend): Format code with Prettier
 refactor(frontend): Extract reusable hook

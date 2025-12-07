@@ -24,7 +24,6 @@ Ensure you have the following installed:
 - **Node.js** v20+: `node --version`
 - **pnpm** v9+: `pnpm --version`
 - **Git**: `git --version`
-- **Python** 3.12+ (for backend): `python --version`
 
 ### Initial Setup
 
@@ -83,7 +82,7 @@ Commits must follow [Conventional Commits](https://www.conventionalcommits.org/)
 <type>(<scope>): <subject>
 
 Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore
-Scopes: frontend, backend, infra, docs, deps, ci, config
+Scopes: frontend, docs, deps, ci, config
 ```
 
 ### 5. Push and Create PR
@@ -198,7 +197,7 @@ Follow Conventional Commits:
 
 ```bash
 feat(frontend): Add dark mode toggle
-fix(backend): Resolve authentication bug
+fix(frontend): Resolve navigation bug
 docs(readme): Update installation steps
 style(frontend): Format with prettier
 refactor(frontend): Extract utility function
