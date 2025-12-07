@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   output: "export",
 
   // GitHub Pages serves from a subdirectory (repo name)
-  basePath: "/portfolio",
-  assetPrefix: "/portfolio",
+  basePath: "/Portfolio",
+  assetPrefix: "/Portfolio",
 
   // Image optimization - use unoptimized for static export
   images: {

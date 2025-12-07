@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://pveloso01.github.io/portfolio/sitemap.xml
+Sitemap: https://pveloso01.github.io/Portfolio/sitemap.xml
