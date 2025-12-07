@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { ProjectCard } from "@/components/projects/project-card";
 import { ProjectFilter } from "@/components/projects/project-filter";
 import projectsData from "@/lib/data/projects.json";
@@ -13,8 +13,12 @@ export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const categories = getUniqueCategories(data);
-  const filteredProjects = filterProjects(data, selectedCategory, searchQuery);
+  // Use useMemo to ensure filtering is consistent and prevent unnecessary re-computations
+  const categories = useMemo(() => getUniqueCategories(data), []);
+  const filteredProjects = useMemo(
+    () => filterProjects(data, selectedCategory, searchQuery),
+    [selectedCategory, searchQuery],
+  );
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
@@ -33,13 +37,13 @@ export default function ProjectsPage() {
         onSearchChange={setSearchQuery}
       />
 
-      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {filteredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
-
-      {filteredProjects.length === 0 && (
+      {filteredProjects.length > 0 ? (
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      ) : (
         <div className="text-center py-12">
           <p className="text-lg text-muted-foreground">No projects found matching your criteria.</p>
         </div>
