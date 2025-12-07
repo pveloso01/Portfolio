@@ -29,12 +29,7 @@ const itemVariants = {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mx-auto mb-16 max-w-2xl text-center"
-      >
+      <div className="mx-auto mb-16 max-w-2xl text-center">
         <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-6xl">
           About Me
         </h1>
@@ -42,7 +37,7 @@ export default function AboutPage() {
           Passionate about building intelligent systems and solving complex
           problems with code
         </p>
-      </motion.div>
+      </div>
 
       <motion.div
         variants={containerVariants}

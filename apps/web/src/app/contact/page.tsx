@@ -65,11 +65,7 @@ export default function ContactPage() {
       <div className="from-primary/10 via-background to-background relative overflow-hidden bg-gradient-to-br py-20">
         <div className="bg-grid-white/5 absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
         <div className="relative container mx-auto max-w-4xl px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
               Let&apos;s Work
               <span className="from-primary bg-gradient-to-r to-purple-400 bg-clip-text text-transparent">
@@ -81,7 +77,7 @@ export default function ContactPage() {
               Have a project in mind or want to collaborate? I&apos;m always
               excited to discuss new opportunities and innovative ideas.
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
 

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { PageTransition } from "@/components/layout/page-transition";
 import { generatePageMetadata } from "@/components/seo/page-metadata";
 import "./globals.css";
 
@@ -84,7 +85,7 @@ export default function RootLayout({
         </a>
         <Header />
         <main id="main-content" className="min-h-screen">
-          {children}
+          <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
       </body>
