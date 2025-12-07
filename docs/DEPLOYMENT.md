@@ -35,8 +35,8 @@ If deploying to `username.github.io/repository-name`, update `next.config.ts`:
 ```typescript
 const nextConfig = {
   // ...other config
-  basePath: '/portfolio',
-  assetPrefix: '/portfolio',
+  basePath: "/portfolio",
+  assetPrefix: "/portfolio",
 };
 ```
 
@@ -59,6 +59,7 @@ git push origin main
 ```
 
 The GitHub Action will automatically:
+
 1. Run tests and quality checks
 2. Build the static site
 3. Deploy to GitHub Pages
@@ -108,22 +109,26 @@ Wait up to 24 hours for DNS propagation and SSL certificate.
 ### Manual Setup
 
 1. **Install Vercel CLI**:
+
    ```bash
    pnpm install -g vercel
    ```
 
 2. **Login**:
+
    ```bash
    vercel login
    ```
 
 3. **Deploy**:
+
    ```bash
    cd apps/web
    vercel
    ```
 
 4. **Production Deploy**:
+
    ```bash
    vercel --prod
    ```
@@ -144,6 +149,7 @@ Create `vercel.json` in project root:
 ### Environment Variables
 
 Add in Vercel dashboard:
+
 - Go to **Settings** → **Environment Variables**
 - Add your variables from `.env.example`
 
@@ -158,21 +164,25 @@ Add in Vercel dashboard:
 ### Manual Setup
 
 1. **Install Netlify CLI**:
+
    ```bash
    pnpm install -g netlify-cli
    ```
 
 2. **Login**:
+
    ```bash
    netlify login
    ```
 
 3. **Initialize**:
+
    ```bash
    netlify init
    ```
 
 4. **Deploy**:
+
    ```bash
    netlify deploy --prod
    ```
@@ -317,6 +327,7 @@ docker run -p 3000:80 portfolio
 ### GitHub Actions (Included)
 
 The project includes workflows for:
+
 - ✅ Automated testing
 - ✅ Code quality checks
 - ✅ Deployment to GitHub Pages
@@ -363,7 +374,7 @@ deploy:
   only:
     - main
   script:
-    - # Your deployment script
+    -  # Your deployment script
 ```
 
 ---
@@ -382,6 +393,7 @@ pnpm exec next analyze
 ### CDN Integration
 
 Consider using a CDN for static assets:
+
 - Cloudflare
 - AWS CloudFront
 - Fastly
@@ -443,6 +455,7 @@ pnpm add @sentry/nextjs
 ### Uptime Monitoring
 
 Use services like:
+
 - UptimeRobot
 - Pingdom
 - Better Uptime
@@ -523,4 +536,3 @@ mv /var/www/portfolio.backup /var/www/portfolio
 ---
 
 **Questions?** Open an issue on GitHub!
-

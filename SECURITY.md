@@ -4,10 +4,10 @@
 
 This is a personal portfolio project. Security updates are applied to the latest version only.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| Latest  | :white_check_mark: |
-| < Latest| :x:                |
+| Version  | Supported          |
+| -------- | ------------------ |
+| Latest   | :white_check_mark: |
+| < Latest | :x:                |
 
 ## Reporting a Vulnerability
 
@@ -20,6 +20,7 @@ Please **do not** open a public GitHub issue for security vulnerabilities.
 ### 2. Report Privately
 
 Send a detailed report to:
+
 - **GitHub Security Advisories**: Use the "Security" tab in this repository
 - **Email**: [Your contact email - update this]
 
@@ -43,18 +44,21 @@ Send a detailed report to:
 This project implements several security measures:
 
 ### Code Quality
+
 - ✅ TypeScript strict mode
 - ✅ ESLint with security rules
 - ✅ Automated dependency updates (Dependabot)
 - ✅ Pre-commit hooks with secret scanning (Gitleaks)
 
 ### CI/CD Security
+
 - ✅ Automated security scanning in CI
 - ✅ Dependency vulnerability checks
 - ✅ Code review requirements (for contributions)
 - ✅ Signed commits (recommended)
 
 ### Frontend Security
+
 - ✅ Content Security Policy (CSP) headers
 - ✅ XSS protection
 - ✅ No inline scripts
@@ -62,6 +66,7 @@ This project implements several security measures:
 - ✅ Regular dependency updates
 
 ### Dependency Management
+
 - ✅ Automated vulnerability scanning (Dependabot)
 - ✅ Regular updates
 - ✅ Lock files for reproducible builds
@@ -92,6 +97,7 @@ Before submitting a PR:
 ## Known Security Considerations
 
 This is a static portfolio site with:
+
 - No user authentication
 - No backend API (in production)
 - No sensitive data storage
@@ -115,4 +121,3 @@ The attack surface is minimal, but we still follow security best practices.
 ---
 
 Thank you for helping keep this project secure! 🔒
-

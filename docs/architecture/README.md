@@ -52,4 +52,3 @@ When making a significant architectural decision:
 3. Discuss with the team (if applicable)
 4. Update this index
 5. Commit the ADR with your changes
-

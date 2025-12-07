@@ -1,3 +1,4 @@
+from core.throttling import PasswordChangeThrottle, PasswordResetThrottle
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import default_token_generator
 from django.utils import timezone
@@ -8,8 +9,6 @@ from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
-from core.throttling import PasswordChangeThrottle, PasswordResetThrottle
 
 from .jwt_utils import revoke_all_user_tokens
 from .serializers import (
@@ -176,4 +175,3 @@ class PasswordResetConfirmView(APIView):
                 {"detail": "Invalid reset link."},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-

@@ -1,4 +1,3 @@
-import uuid
 from datetime import timedelta
 
 from django.conf import settings
@@ -169,4 +168,3 @@ def extract_device_info(user_agent):
         browser = "Other"
 
     return f"{device_type} - {browser}"
-

@@ -9,6 +9,7 @@ Accepted
 ## Context
 
 TypeScript provides various levels of type checking strictness. We needed to decide what level of strictness to enforce in our codebase to balance:
+
 - Type safety and bug prevention
 - Developer productivity
 - Learning curve
@@ -62,7 +63,7 @@ We will enable TypeScript strict mode with additional strict options:
 
 ```typescript
 function getUser(id) {
-  const users = { 1: 'Alice', 2: 'Bob' };
+  const users = { 1: "Alice", 2: "Bob" };
   return users[id]; // Could be undefined
 }
 ```
@@ -71,7 +72,7 @@ function getUser(id) {
 
 ```typescript
 function getUser(id: number): string | undefined {
-  const users: Record<number, string> = { 1: 'Alice', 2: 'Bob' };
+  const users: Record<number, string> = { 1: "Alice", 2: "Bob" };
   return users[id]; // Type system knows this could be undefined
 }
 
@@ -85,14 +86,16 @@ if (user !== undefined) {
 ## Alternatives Considered
 
 ### 1. Non-strict TypeScript
+
 - **Pros**: Faster to write, easier for beginners
 - **Cons**: Defeats the purpose of using TypeScript
 
 ### 2. Gradual Adoption
+
 - **Pros**: Easier migration for existing codebases
 - **Cons**: Inconsistent code quality, technical debt
 
 ### 3. Even Stricter (with custom rules)
+
 - **Pros**: Maximum type safety
 - **Cons**: Diminishing returns, slower development
-

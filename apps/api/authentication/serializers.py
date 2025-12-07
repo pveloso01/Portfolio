@@ -28,9 +28,7 @@ class LoginSerializer(serializers.Serializer):
             )
 
             if not user:
-                raise serializers.ValidationError(
-                    "Unable to log in with provided credentials."
-                )
+                raise serializers.ValidationError("Unable to log in with provided credentials.")
 
             if not user.is_active:
                 raise serializers.ValidationError("User account is disabled.")
@@ -44,9 +42,7 @@ class LoginSerializer(serializers.Serializer):
             attrs["user"] = user
             return attrs
         else:
-            raise serializers.ValidationError(
-                "Must include 'email' and 'password'."
-            )
+            raise serializers.ValidationError("Must include 'email' and 'password'.")
 
 
 class TokenRefreshSerializer(serializers.Serializer):
@@ -87,9 +83,7 @@ class PasswordChangeSerializer(serializers.Serializer):
         confirm_password = attrs.get("confirm_password")
 
         if new_password != confirm_password:
-            raise serializers.ValidationError(
-                {"confirm_password": "Passwords do not match."}
-            )
+            raise serializers.ValidationError({"confirm_password": "Passwords do not match."})
 
         # Validate password strength
         try:
@@ -128,9 +122,7 @@ class PasswordResetConfirmSerializer(serializers.Serializer):
         confirm_password = attrs.get("confirm_password")
 
         if new_password != confirm_password:
-            raise serializers.ValidationError(
-                {"confirm_password": "Passwords do not match."}
-            )
+            raise serializers.ValidationError({"confirm_password": "Passwords do not match."})
 
         # Validate password strength (without user context for reset)
         try:
@@ -158,4 +150,3 @@ class LogoutSerializer(serializers.Serializer):
     """Serializer for logout (blacklist refresh token)."""
 
     refresh = serializers.CharField(required=True)
-

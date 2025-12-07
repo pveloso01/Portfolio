@@ -1,9 +1,8 @@
 import logging
 
+from authentication.models import IPWhitelist
 from django.conf import settings
 from django.http import JsonResponse
-
-from authentication.models import IPWhitelist
 
 logger = logging.getLogger(__name__)
 
@@ -28,8 +27,7 @@ class IPWhitelistMiddleware:
 
             if not self._is_ip_whitelisted(client_ip):
                 logger.warning(
-                    f"Blocked access from non-whitelisted IP: {client_ip} "
-                    f"to {request.path}"
+                    f"Blocked access from non-whitelisted IP: {client_ip} " f"to {request.path}"
                 )
                 return JsonResponse(
                     {
@@ -70,4 +68,3 @@ class IPWhitelistMiddleware:
         else:
             ip = request.META.get("REMOTE_ADDR")
         return ip
-

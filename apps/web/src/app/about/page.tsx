@@ -1,7 +1,6 @@
 import { BioSection } from "@/components/about/bio-section";
 import { SkillsGrid } from "@/components/about/skills-grid";
 import { Timeline } from "@/components/about/timeline";
-import { Certifications } from "@/components/about/certifications";
 
 export { metadata } from "./metadata";
 
@@ -18,7 +17,6 @@ export default function AboutPage() {
       <BioSection />
       <SkillsGrid />
       <Timeline />
-      <Certifications />
     </div>
   );
 }

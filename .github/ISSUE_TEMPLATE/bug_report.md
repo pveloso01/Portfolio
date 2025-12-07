@@ -1,9 +1,9 @@
 ---
 name: Bug Report
 about: Create a report to help improve this project
-title: '[BUG] '
+title: "[BUG] "
 labels: bug
-assignees: ''
+assignees: ""
 ---
 
 ## Description
@@ -43,4 +43,3 @@ Add any other context about the problem here.
 ## Possible Solution
 
 If you have suggestions on how to fix the bug, please describe them here.
-

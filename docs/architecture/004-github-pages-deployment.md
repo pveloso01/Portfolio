@@ -9,6 +9,7 @@ Accepted
 ## Context
 
 We needed a hosting solution for the portfolio that would:
+
 - Be cost-effective (ideally free)
 - Support custom domains
 - Provide good performance globally
@@ -126,11 +127,13 @@ permissions:
 ## Custom Domain Setup (Optional)
 
 1. Add `CNAME` file to `public/` directory:
+
    ```
    yourdomain.com
    ```
 
 2. Configure DNS records:
+
    ```
    A     @    185.199.108.153
    A     @    185.199.109.153
@@ -151,39 +154,44 @@ permissions:
 ## Alternatives Considered
 
 ### 1. Vercel
+
 - **Pros**: Excellent DX, serverless functions, edge network
 - **Cons**: Usage limits on free tier, vendor lock-in
 
 ### 2. Netlify
+
 - **Pros**: Great build system, form handling, serverless
 - **Cons**: Bandwidth limits, build minutes limits
 
 ### 3. AWS S3 + CloudFront
+
 - **Pros**: Highly scalable, full control
 - **Cons**: Complex setup, costs money, more maintenance
 
 ### 4. Firebase Hosting
+
 - **Pros**: Fast CDN, good integration with Firebase
 - **Cons**: Bandwidth costs, less familiar
 
 ### 5. Cloudflare Pages
+
 - **Pros**: Fast, good free tier, Cloudflare CDN
 - **Cons**: Less GitHub integration
 
 ## Decision Factors
 
-| Factor | GitHub Pages | Vercel | Netlify | AWS |
-|--------|-------------|---------|---------|-----|
-| Cost | Free | Free tier | Free tier | Paid |
-| Setup | Simple | Simple | Simple | Complex |
-| CI/CD | Native | Good | Good | Manual |
-| Custom Domain | Yes | Yes | Yes | Yes |
-| Bandwidth | 100GB/mo | 100GB/mo | 100GB/mo | Pay per use |
-| **Score** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
+| Factor        | GitHub Pages | Vercel    | Netlify   | AWS         |
+| ------------- | ------------ | --------- | --------- | ----------- |
+| Cost          | Free         | Free tier | Free tier | Paid        |
+| Setup         | Simple       | Simple    | Simple    | Complex     |
+| CI/CD         | Native       | Good      | Good      | Manual      |
+| Custom Domain | Yes          | Yes       | Yes       | Yes         |
+| Bandwidth     | 100GB/mo     | 100GB/mo  | 100GB/mo  | Pay per use |
+| **Score**     | ⭐⭐⭐⭐⭐   | ⭐⭐⭐⭐  | ⭐⭐⭐⭐  | ⭐⭐⭐      |
 
 GitHub Pages wins for this use case due to:
+
 - Zero cost
 - Native GitHub integration
 - Simple setup
 - Sufficient for portfolio traffic
-

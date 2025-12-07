@@ -34,4 +34,3 @@ class EmailVerificationThrottle(AnonRateThrottle):
 
     scope = "email_verification"
     rate = "3/hour"
-

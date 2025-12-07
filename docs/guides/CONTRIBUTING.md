@@ -40,22 +40,29 @@ This project follows a simple code of conduct:
 
 1. **Fork the repository** (for external contributors)
 2. **Clone your fork**:
+
    ```bash
    git clone https://github.com/YOUR_USERNAME/portfolio.git
    cd portfolio
    ```
+
 3. **Install dependencies**:
+
    ```bash
    cd apps/web
    pnpm install
    ```
+
 4. **Install pre-commit hooks**:
+
    ```bash
    pip install pre-commit
    pre-commit install
    pre-commit install --hook-type commit-msg
    ```
+
 5. **Create a branch**:
+
    ```bash
    git checkout -b feature/your-feature
    ```
@@ -144,6 +151,7 @@ Then create a Pull Request on GitHub.
 - **Explicit types**: For function parameters and return types
 
 **Example:**
+
 ```typescript
 // ✅ Good
 type User = {
@@ -169,6 +177,7 @@ function getUser(id: any): any {
 - **File structure**: One component per file
 
 **Example:**
+
 ```typescript
 // ✅ Good
 type ButtonProps = {
@@ -177,14 +186,14 @@ type ButtonProps = {
   variant?: 'primary' | 'secondary';
 };
 
-export const Button = ({ 
-  label, 
-  onClick, 
-  variant = 'primary' 
+export const Button = ({
+  label,
+  onClick,
+  variant = 'primary'
 }: ButtonProps) => {
   return (
-    <button 
-      onClick={onClick} 
+    <button
+      onClick={onClick}
       className={`btn btn-${variant}`}
     >
       {label}
@@ -201,6 +210,7 @@ export const Button = ({
 - **Responsive**: Mobile-first approach
 
 **Example:**
+
 ```typescript
 export const Card = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -219,6 +229,7 @@ export const Card = ({ children }: { children: React.ReactNode }) => {
 - **Clear assertions**: One concept per test
 
 **Example:**
+
 ```typescript
 import { render, screen, userEvent } from '@testing-library/react';
 import { Button } from './Button';
@@ -227,9 +238,9 @@ describe('Button', () => {
   it('calls onClick when clicked', async () => {
     const handleClick = vi.fn();
     render(<Button label="Click me" onClick={handleClick} />);
-    
+
     await userEvent.click(screen.getByRole('button', { name: /click me/i }));
-    
+
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });
@@ -297,6 +308,7 @@ chore(config): Update ESLint rules
 6. **Explain what and why**, not how
 
 **Good:**
+
 ```
 feat(frontend): Add user authentication
 
@@ -307,6 +319,7 @@ Closes #123
 ```
 
 **Bad:**
+
 ```
 Updated some files
 ```
@@ -351,22 +364,28 @@ Include:
 
 ```markdown
 ## Description
+
 Brief description of changes
 
 ## Motivation
+
 Why these changes are needed
 
 ## Changes
+
 - Change 1
 - Change 2
 
 ## Testing
+
 How to test these changes
 
 ## Screenshots (if applicable)
+
 ![Screenshot](url)
 
 ## Related Issues
+
 Closes #123
 ```
 
@@ -392,29 +411,36 @@ Closes #123
 
 ```markdown
 ## Description
+
 Clear description of the bug
 
 ## Steps to Reproduce
+
 1. Go to '...'
 2. Click on '...'
 3. See error
 
 ## Expected Behavior
+
 What should happen
 
 ## Actual Behavior
+
 What actually happens
 
 ## Screenshots
+
 If applicable
 
 ## Environment
+
 - OS: [e.g., macOS 14.0]
 - Browser: [e.g., Chrome 120]
 - Node.js: [e.g., v20.10.0]
 - Version: [e.g., commit hash or version]
 
 ## Additional Context
+
 Any other relevant information
 ```
 
@@ -426,18 +452,23 @@ Any other relevant information
 
 ```markdown
 ## Feature Description
+
 Clear description of the feature
 
 ## Problem
+
 What problem does this solve?
 
 ## Proposed Solution
+
 How should this feature work?
 
 ## Alternatives Considered
+
 Other ways to solve this problem
 
 ## Additional Context
+
 Screenshots, mockups, examples, etc.
 ```
 
@@ -458,4 +489,3 @@ Screenshots, mockups, examples, etc.
 ---
 
 Thank you for contributing! 🎉
-

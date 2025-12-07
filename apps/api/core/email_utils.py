@@ -84,4 +84,3 @@ def send_security_alert_email(user, activity_type, ip_address, location="Unknown
         recipient_list=[user.email],
         html_message=html_message,
     )
-

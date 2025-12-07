@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import type { SkillsData } from "@/lib/types/about";
 import skillsData from "@/lib/data/skills.json";
 import { scaleIn, viewportOnce } from "@/lib/utils/animations";
@@ -37,23 +38,15 @@ export function SkillsGrid() {
                 <CardTitle className="text-xl">{category.name}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium text-foreground/80">{skill.name}</span>
-                        <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 bg-muted rounded-full overflow-hidden">
-                        <motion.div
-                          className="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={viewportOnce}
-                          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                        />
-                      </div>
-                    </div>
+                    <Badge
+                      key={skill.name}
+                      variant="secondary"
+                      className="text-sm px-3 py-1 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                    >
+                      {skill.name}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>

@@ -9,6 +9,7 @@ Accepted
 ## Context
 
 We needed to choose a frontend framework for the portfolio website that would:
+
 - Provide excellent performance
 - Support static site generation for GitHub Pages
 - Offer modern developer experience
@@ -55,18 +56,21 @@ const nextConfig = {
 ## Alternatives Considered
 
 ### 1. Gatsby
+
 - **Pros**: Built for static sites, excellent plugin ecosystem
 - **Cons**: Slower build times, less active development than Next.js
 
 ### 2. Astro
+
 - **Pros**: Excellent performance, component framework agnostic
 - **Cons**: Smaller ecosystem, less familiar
 
 ### 3. Create React App
+
 - **Pros**: Simple setup
 - **Cons**: No static generation, no file-based routing, deprecated
 
 ### 4. Vite + React Router
+
 - **Pros**: Fast development, flexible
 - **Cons**: More manual setup, no built-in static generation
-

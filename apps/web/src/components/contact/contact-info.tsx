@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 const contactDetails = [
   {
@@ -9,12 +9,6 @@ const contactDetails = [
     label: "Email",
     value: "pedrovelosofernandes@outlook.com",
     href: "mailto:pedrovelosofernandes@outlook.com",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+351 918 886 111",
-    href: "tel:+351918886111",
   },
   {
     icon: MapPin,

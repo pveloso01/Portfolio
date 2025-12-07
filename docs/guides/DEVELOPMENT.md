@@ -46,7 +46,7 @@ pre-commit install --hook-type commit-msg
 pnpm dev
 ```
 
-Visit http://localhost:3000 to see your portfolio.
+Visit <http://localhost:3000> to see your portfolio.
 
 ---
 
@@ -107,6 +107,7 @@ Then create a Pull Request on GitHub.
 - Use type inference where possible
 
 **Good:**
+
 ```typescript
 type User = {
   id: number;
@@ -119,6 +120,7 @@ const getUser = (id: number): User | undefined => {
 ```
 
 **Bad:**
+
 ```typescript
 function getUser(id: any): any {
   // implementation
@@ -134,6 +136,7 @@ function getUser(id: any): any {
 - Use custom hooks for reusable logic
 
 **Good:**
+
 ```typescript
 type ButtonProps = {
   label: string;
@@ -253,9 +256,9 @@ describe('Button', () => {
   it('calls onClick when clicked', async () => {
     const handleClick = vi.fn();
     render(<Button label="Click" onClick={handleClick} />);
-    
+
     await userEvent.click(screen.getByRole('button'));
-    
+
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });
@@ -278,13 +281,13 @@ pnpm exec playwright test --project=chromium
 
 ```typescript
 // home.spec.ts
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test('homepage loads correctly', async ({ page }) => {
-  await page.goto('/');
-  
+test("homepage loads correctly", async ({ page }) => {
+  await page.goto("/");
+
   await expect(page).toHaveTitle(/Portfolio/);
-  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 });
 ```
 
@@ -323,8 +326,8 @@ Create `.vscode/launch.json`:
 
 ```typescript
 // Development only
-if (process.env.NODE_ENV === 'development') {
-  console.log('Debug info:', data);
+if (process.env.NODE_ENV === "development") {
+  console.log("Debug info:", data);
 }
 ```
 
@@ -510,4 +513,3 @@ export default function Page() {
 ---
 
 **Need Help?** Open an issue on GitHub!
-

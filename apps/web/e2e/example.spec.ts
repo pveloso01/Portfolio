@@ -26,4 +26,3 @@ test.describe("Homepage", () => {
     await expect(main).toBeVisible();
   });
 });
-

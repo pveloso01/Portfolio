@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.backends import ModelBackend
-from django.utils import timezone
 
 from .models import LoginAttempt
 
@@ -106,4 +105,3 @@ class EmailAuthenticationBackend(ModelBackend):
         else:
             ip = request.META.get("REMOTE_ADDR", "unknown")
         return ip
-

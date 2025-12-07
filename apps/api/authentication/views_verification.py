@@ -1,3 +1,4 @@
+from core.throttling import EmailVerificationThrottle
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes, force_str
@@ -7,8 +8,6 @@ from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
-from core.throttling import EmailVerificationThrottle
 
 from .serializers import EmailVerificationSerializer, ResendVerificationSerializer
 
@@ -161,4 +160,3 @@ class ResendVerificationEmailView(APIView):
             },
             status=status.HTTP_200_OK,
         )
-

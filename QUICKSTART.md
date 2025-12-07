@@ -86,19 +86,23 @@ pnpm test:e2e     # Run E2E tests
 2. **Enable GitHub Pages** in repository settings:
    - Settings → Pages → Source: GitHub Actions
 3. **Push to main branch**:
+
    ```bash
    git push origin main
    ```
+
 4. **Your site will be live** at: `https://username.github.io/portfolio`
 
 ### Custom Domain (Optional)
 
 1. Add a `CNAME` file in `apps/web/public/`:
+
    ```
    yourdomain.com
    ```
 
 2. Configure DNS:
+
    ```
    A     @    185.199.108.153
    CNAME www  username.github.io
@@ -147,4 +151,3 @@ pnpm build
 ---
 
 Happy coding! 🚀
-

@@ -4,4 +4,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://pveloso.github.io/portfolio/sitemap.xml
-

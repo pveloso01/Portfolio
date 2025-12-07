@@ -1,9 +1,9 @@
 ---
 name: Feature Request
 about: Suggest an idea for this project
-title: '[FEATURE] '
+title: "[FEATURE] "
 labels: enhancement
-assignees: ''
+assignees: ""
 ---
 
 ## Feature Description
@@ -34,4 +34,3 @@ How would this feature improve the project?
 ## Potential Drawbacks
 
 Are there any potential negative impacts or challenges?
-

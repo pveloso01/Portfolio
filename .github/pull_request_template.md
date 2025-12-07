@@ -24,9 +24,9 @@ Closes #
 
 <!-- List the key changes made in this PR -->
 
-- 
-- 
-- 
+-
+-
+-
 
 ## Testing
 
@@ -44,8 +44,8 @@ Closes #
 
 <!-- If applicable, add screenshots to demonstrate the changes -->
 
-| Before | After |
-|--------|-------|
+| Before     | After      |
+| ---------- | ---------- |
 | screenshot | screenshot |
 
 ## Checklist
@@ -64,4 +64,3 @@ Closes #
 ## Additional Notes
 
 <!-- Add any additional notes, context, or considerations for reviewers -->
-
