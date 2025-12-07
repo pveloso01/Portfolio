@@ -1,0 +1,17 @@
+{
+  "greeting": "Hi, I'm",
+  "name": "Your Name",
+  "roles": ["Python Back-End Developer", "AI/ML Engineer", "Software Architect", "Problem Solver"],
+  "tagline": "Building intelligent, scalable solutions with Python and AI",
+  "description": "I specialize in developing robust back-end systems and AI-powered applications. With expertise in Python, Django, FastAPI, and machine learning frameworks, I create solutions that make a real-world impact.",
+  "cta": {
+    "primary": {
+      "text": "View My Work",
+      "href": "/projects"
+    },
+    "secondary": {
+      "text": "Get in Touch",
+      "href": "/contact"
+    }
+  }
+}

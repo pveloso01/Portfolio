@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "title": "AI-Powered Recommendation System",
+    "slug": "ai-recommendation-system",
+    "description": "Built a machine learning recommendation engine using Python, TensorFlow, and collaborative filtering to personalize user experiences.",
+    "category": "AI/ML",
+    "tags": ["Python", "TensorFlow", "FastAPI", "PostgreSQL"],
+    "featured": true,
+    "image": "/placeholder-project-1.jpg",
+    "github": "https://github.com",
+    "demo": null,
+    "date": "2024-01-15"
+  },
+  {
+    "id": "2",
+    "title": "Django REST API Platform",
+    "slug": "django-rest-api",
+    "description": "Developed a scalable REST API platform with Django and DRF, featuring JWT authentication, rate limiting, and comprehensive test coverage.",
+    "category": "Backend",
+    "tags": ["Django", "DRF", "PostgreSQL", "Redis", "Docker"],
+    "featured": true,
+    "image": "/placeholder-project-2.jpg",
+    "github": "https://github.com",
+    "demo": "https://demo.example.com",
+    "date": "2023-11-20"
+  },
+  {
+    "id": "3",
+    "title": "Real-time Data Pipeline",
+    "slug": "data-pipeline",
+    "description": "Created an ETL pipeline processing millions of records daily using Apache Airflow, Python, and cloud infrastructure.",
+    "category": "Data Engineering",
+    "tags": ["Python", "Apache Airflow", "AWS", "Pandas", "Docker"],
+    "featured": true,
+    "image": "/placeholder-project-3.jpg",
+    "github": "https://github.com",
+    "demo": null,
+    "date": "2023-09-10"
+  }
+]
