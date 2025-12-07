@@ -141,7 +141,7 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Run Playwright tests
-        run: pnpm run test:e2e
+        run: pnpm exec playwright test --project=chromium
         env:
           CI: true
 
