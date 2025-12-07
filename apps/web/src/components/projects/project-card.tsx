@@ -13,7 +13,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { Project } from "@/lib/types/project";
-import { scaleIn, viewportOnce } from "@/lib/utils/animations";
+import { scaleIn } from "@/lib/utils/animations";
 
 interface ProjectCardProps {
   project: Project;
@@ -24,8 +24,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <motion.div
       variants={scaleIn}
       initial="hidden"
-      whileInView="visible"
-      viewport={viewportOnce}
+      animate="visible"
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.3 }}
     >
