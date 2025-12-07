@@ -36,12 +36,22 @@ export default function ContactPage() {
                 to reach out about projects, collaborations, or just to say hello!
               </p>
 
-              <Button size="lg" className="w-full md:w-auto" asChild>
-                <a href="mailto:pedrovelosofernandes@outlook.com?subject=Contact from Portfolio">
-                  <Send className="w-4 h-4 mr-2" />
-                  Email Me
+              <div className="flex flex-col gap-4">
+                <Button size="lg" className="w-full md:w-auto" asChild>
+                  <a href="mailto:pedrovelosofernandes@outlook.com?subject=Contact%20from%20Portfolio">
+                    <Send className="w-4 h-4 mr-2" />
+                    Email Me
+                  </a>
+                </Button>
+
+                {/* Fallback simple link */}
+                <a
+                  href="mailto:pedrovelosofernandes@outlook.com"
+                  className="text-sm text-primary hover:underline text-center"
+                >
+                  Or click here if the button doesn&apos;t work
                 </a>
-              </Button>
+              </div>
 
               <div className="pt-4 border-t border-border">
                 <p className="text-sm text-muted-foreground">
