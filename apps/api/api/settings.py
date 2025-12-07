@@ -205,10 +205,22 @@ CSRF_TRUSTED_ORIGINS = [
     if origin
 ]
 
-# --- Email (DEV) ---
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "noreply@portfolio.com")
+# --- Email Configuration ---
+# Use console backend for dev (prints to terminal), SMTP for production
+EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend")
+
+# SMTP Configuration (for production)
+EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp-mail.outlook.com")
+EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "587"))
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", "True") == "True"
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
+
+# Email addresses
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "pedrovelosofernandes@outlook.com")
 CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL", "pedrovelosofernandes@outlook.com")
+
+# Frontend URL
 FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://localhost:3000")
 
 # --- IP Whitelist (Security) ---
