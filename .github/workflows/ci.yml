@@ -48,12 +48,21 @@ jobs:
       - name: Run Prettier check
         run: pnpm run format:check
 
-      - name: Run unit tests
-        run: pnpm run test run
+      - name: Run unit tests with coverage
+        run: pnpm run test:coverage run
+
+      - name: Check if coverage file exists
+        id: check_coverage
+        run: |
+          if [ -f "coverage/lcov.info" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Upload coverage reports
         uses: codecov/codecov-action@v5
-        if: always()
+        if: steps.check_coverage.outputs.exists == 'true'
         with:
           files: ./apps/web/coverage/lcov.info
           flags: frontend
