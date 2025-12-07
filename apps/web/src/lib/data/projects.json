@@ -22,7 +22,9 @@
     "image": "/placeholder-project-1.jpg",
     "github": null,
     "demo": null,
-    "date": "2024-09-01",
+    "date": "2024-02-01",
+    "endDate": "2024-10-01",
+    "status": "completed",
     "highlights": [
       "Achieved 95%+ accuracy in day-ahead market predictions using ensemble methods",
       "Processed and analyzed over 1M+ data points daily with automated ETL pipelines",
@@ -36,7 +38,7 @@
       "Optimizing model inference performance for sub-second prediction requirements",
       "Building robust error handling for production deployment with 99.9% uptime"
     ],
-    "outcome": "Successfully deployed in academic research environment, demonstrating significant improvement over baseline models. The platform provides actionable insights for energy market participants and serves as a foundation for future commercial applications.",
+    "outcome": "Successfully completed as Master's thesis, demonstrating significant improvement over baseline models. The platform provides actionable insights for energy market participants and serves as a foundation for future commercial applications.",
     "role": "Lead Developer & ML Engineer",
     "duration": "9 months",
     "teamSize": "Solo project with academic supervision"
@@ -53,7 +55,9 @@
     "image": "/placeholder-project-2.jpg",
     "github": "https://github.com/pveloso01/Atlas-Investor",
     "demo": null,
-    "date": "2024-01-01",
+    "date": "2023-07-01",
+    "endDate": "2024-01-01",
+    "status": "completed",
     "highlights": [
       "Analyzed 10,000+ properties across Portugal with comprehensive investment metrics",
       "Integrated municipal zoning data with real-time market information",
@@ -77,7 +81,7 @@
     "title": "PopcornGuess",
     "slug": "popcornguess",
     "description": "Fast daily challenge about streaming culture. Players solve clues from frames, audio, and quotes to guess movies, series, creators, and characters.",
-    "longDescription": "Engaging daily puzzle game that challenges players' knowledge of movies, TV series, content creators, and characters. The platform presents visual, audio, and textual clues that players must decode to identify the correct answer.\n\nBuilt with Django for robust backend functionality, the game features a sophisticated clue generation system, user authentication, scoring mechanics, and social sharing capabilities. Each day presents a new challenge across different categories, keeping the content fresh and engaging.\n\nThe platform includes an admin interface for content management, automated daily puzzle scheduling, and a leaderboard system to foster community engagement and competition.",
+    "longDescription": "Engaging daily puzzle game that challenges players' knowledge of movies, TV series, content creators, and characters. The platform presents visual, audio, and textual clues that players must decode to identify the correct answer.\n\nBuilt with Django for robust backend functionality, the game features a sophisticated clue generation system, user authentication, scoring mechanics, and social sharing capabilities. Each day presents a new challenge across different categories, keeping the content fresh and engaging.\n\nThe platform includes an admin interface for content management, automated daily puzzle scheduling, and a leaderboard system to foster community engagement and competition. Currently in active development with ongoing feature additions and content updates.",
     "category": "Web Development",
     "tags": ["Python", "Django", "Game Development", "Entertainment"],
     "featured": true,
@@ -85,6 +89,7 @@
     "github": "https://github.com/pveloso01/PopcornGuess",
     "demo": null,
     "date": "2023-03-01",
+    "status": "in-progress",
     "highlights": [
       "Developed engaging gameplay mechanics with progressive hint system",
       "Implemented user authentication and profile management with Django",
@@ -98,9 +103,9 @@
       "Preventing answer spoilers while enabling social sharing",
       "Balancing game difficulty to appeal to both casual and hardcore fans"
     ],
-    "outcome": "Launched successful daily puzzle game with positive user feedback. The platform demonstrates strong engagement metrics and provides a foundation for potential monetization through premium features or advertising.",
+    "outcome": "Active development with positive user feedback from beta testing. The platform demonstrates strong engagement metrics and provides a foundation for potential monetization through premium features or advertising.",
     "role": "Full-Stack Developer & Game Designer",
-    "duration": "4 months",
+    "duration": "Ongoing since March 2023",
     "teamSize": "Solo project"
   },
   {
@@ -115,7 +120,9 @@
     "image": "/placeholder-project-4.jpg",
     "github": "https://github.com/pveloso01/Travel-Planner",
     "demo": null,
-    "date": "2023-06-01",
+    "date": "2023-03-01",
+    "endDate": "2023-06-01",
+    "status": "completed",
     "highlights": [
       "Integrated multiple third-party APIs for maps, POIs, and weather data",
       "Implemented comprehensive test suite with 80%+ code coverage",
@@ -146,7 +153,9 @@
     "image": "/placeholder-project-5.jpg",
     "github": "https://github.com/pveloso01/PhotoPack",
     "demo": null,
-    "date": "2022-11-01",
+    "date": "2022-06-01",
+    "endDate": "2022-11-01",
+    "status": "completed",
     "highlights": [
       "Implemented secure payment processing with major payment gateways",
       "Built automated watermarking system for preview generation",

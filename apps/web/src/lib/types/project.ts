@@ -9,7 +9,8 @@ export interface Project {
   image: string;
   github: string | null;
   demo: string | null;
-  date: string;
+  date: string; // Start date
+  endDate?: string; // Optional end date - if not provided, project is in progress
 
   // Optional enhanced fields for detailed project pages
   longDescription?: string;
@@ -20,4 +21,5 @@ export interface Project {
   role?: string;
   duration?: string;
   teamSize?: string;
+  status?: "completed" | "in-progress" | "on-hold";
 }

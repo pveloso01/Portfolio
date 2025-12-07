@@ -60,11 +60,21 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       {/* Hero Section */}
       <div className="space-y-6 mb-12">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
           <Badge variant="secondary" className="text-sm">
             {project.category}
           </Badge>
+          {project.status === "in-progress" && (
+            <Badge variant="default" className="text-sm">
+              <span className="relative flex h-2 w-2 mr-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
+              </span>
+              In Progress
+            </Badge>
+          )}
           <span className="text-sm text-muted-foreground">
+            {project.status === "in-progress" ? "Started " : ""}
             {new Date(project.date).toLocaleDateString("en-US", {
               month: "long",
               year: "numeric",
@@ -212,6 +222,24 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               <CardTitle className="text-lg">Project Info</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-sm">
+              {project.status && (
+                <div>
+                  <dt className="font-semibold text-foreground mb-1">Status</dt>
+                  <dd className="text-muted-foreground">
+                    {project.status === "in-progress" && (
+                      <span className="inline-flex items-center gap-1.5">
+                        <span className="relative flex h-2 w-2">
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                        </span>
+                        In Progress
+                      </span>
+                    )}
+                    {project.status === "completed" && "Completed"}
+                    {project.status === "on-hold" && "On Hold"}
+                  </dd>
+                </div>
+              )}
               {project.role && (
                 <div>
                   <dt className="font-semibold text-foreground mb-1">Role</dt>
@@ -231,12 +259,19 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
               )}
               <div>
-                <dt className="font-semibold text-foreground mb-1">Completed</dt>
+                <dt className="font-semibold text-foreground mb-1">
+                  {project.status === "in-progress" ? "Started" : "Timeline"}
+                </dt>
                 <dd className="text-muted-foreground">
                   {new Date(project.date).toLocaleDateString("en-US", {
                     month: "long",
                     year: "numeric",
                   })}
+                  {project.endDate &&
+                    ` - ${new Date(project.endDate).toLocaleDateString("en-US", {
+                      month: "long",
+                      year: "numeric",
+                    })}`}
                 </dd>
               </div>
             </CardContent>
