@@ -39,10 +39,12 @@ repos:
       - id: eslint
         files: ^apps/web/.*\.[jt]sx?$
         types: [file]
-        args: [--fix]
+        args: [--fix, --config, apps/web/eslint.config.mjs]
         additional_dependencies:
           - eslint@^9
           - eslint-config-next@16.0.1
+          - eslint-config-prettier@^9.1.0
+          - typescript@^5
 
   # JS/TS/JSON/MD/MDX/YAML: Prettier (mirror, no Node needed)
   - repo: https://github.com/pre-commit/mirrors-prettier
