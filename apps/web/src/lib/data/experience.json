@@ -2,45 +2,45 @@
   {
     "id": "1",
     "type": "work",
-    "title": "Senior Python Developer",
-    "company": "Tech Company",
-    "location": "Remote",
-    "startDate": "2022-01",
+    "title": "Master's Thesis - ML Engineer",
+    "company": "FEUP & Shortcut Lda. (WATT Platform)",
+    "location": "Porto, Portugal",
+    "startDate": "2024-09",
     "endDate": null,
     "current": true,
-    "description": "Leading back-end development for AI-powered applications, architecting scalable microservices with Python and Django."
+    "description": "Building day-ahead & intraday price/load forecasting with LightGBM/Prophet/SARIMAX. Developed contract-decision engine and production data pipeline with OMIE + weather ETL. Implemented MLOps with Docker, GitHub Actions CI/CD, MLflow experiment tracking, and DVC data/model versioning."
   },
   {
     "id": "2",
     "type": "work",
-    "title": "Back-End Developer",
-    "company": "Startup Inc",
-    "location": "City, Country",
-    "startDate": "2020-06",
-    "endDate": "2021-12",
+    "title": "Junior Full Stack Developer (Internship)",
+    "company": "NOS Porto",
+    "location": "Porto, Portugal",
+    "startDate": "2021-12",
+    "endDate": "2022-05",
     "current": false,
-    "description": "Developed RESTful APIs and implemented machine learning models for production systems."
+    "description": "Worked on full-stack development using Microsoft SQL Server, ASP.NET, and Angular. Developed and maintained web applications for internal systems."
   },
   {
     "id": "3",
     "type": "education",
-    "title": "MSc in Computer Science (In Progress)",
-    "company": "University Name",
-    "location": "City, Country",
-    "startDate": "2023-09",
-    "endDate": "2025-06",
+    "title": "Master in Software Engineering",
+    "company": "Faculty of Engineering, University of Porto",
+    "location": "Porto, Portugal",
+    "startDate": "2024-01",
+    "endDate": null,
     "current": true,
-    "description": "Focus on Artificial Intelligence and Machine Learning. Dissertation on Federated Learning."
+    "description": "Specializing in Machine Learning, MLOps, and advanced software engineering practices. Thesis on Predictive Models for Energy Market Analysis & Contract Renegotiation Support."
   },
   {
     "id": "4",
     "type": "education",
-    "title": "BSc in Computer Science",
-    "company": "University Name",
-    "location": "City, Country",
-    "startDate": "2017-09",
-    "endDate": "2020-06",
+    "title": "Bachelor of Informatics and Computing Engineering",
+    "company": "Faculty of Engineering, University of Porto",
+    "location": "Porto, Portugal",
+    "startDate": "2019-01",
+    "endDate": "2024-01",
     "current": false,
-    "description": "First Class Honours. Specialized in Software Engineering and Data Science."
+    "description": "Final Grade: 14/20. Comprehensive program covering software development, algorithms, databases, and computer systems."
   }
 ]

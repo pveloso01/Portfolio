@@ -3,40 +3,42 @@
     {
       "name": "Languages",
       "skills": [
-        { "name": "Python", "level": 95 },
-        { "name": "TypeScript", "level": 85 },
+        { "name": "Python", "level": 90 },
         { "name": "JavaScript", "level": 85 },
-        { "name": "SQL", "level": 80 },
-        { "name": "Bash", "level": 70 }
+        { "name": "TypeScript", "level": 80 },
+        { "name": "Java", "level": 75 },
+        { "name": "C", "level": 70 },
+        { "name": "C++", "level": 70 }
       ]
     },
     {
-      "name": "Backend Frameworks",
+      "name": "Web Technologies",
       "skills": [
-        { "name": "Django", "level": 95 },
+        { "name": "React", "level": 85 },
+        { "name": "Django", "level": 90 },
+        { "name": "Angular", "level": 80 },
+        { "name": "Node.js", "level": 75 },
         { "name": "FastAPI", "level": 90 },
-        { "name": "Flask", "level": 85 },
-        { "name": "Django REST Framework", "level": 95 }
+        { "name": "ASP.NET", "level": 70 }
       ]
     },
     {
-      "name": "AI/ML",
+      "name": "ML/Data Science",
       "skills": [
-        { "name": "TensorFlow", "level": 85 },
-        { "name": "PyTorch", "level": 80 },
-        { "name": "scikit-learn", "level": 90 },
-        { "name": "Hugging Face", "level": 75 },
-        { "name": "NumPy", "level": 95 },
-        { "name": "Pandas", "level": 95 }
+        { "name": "LightGBM", "level": 85 },
+        { "name": "Prophet", "level": 80 },
+        { "name": "SARIMAX", "level": 80 },
+        { "name": "MLflow", "level": 85 },
+        { "name": "DVC", "level": 80 },
+        { "name": "SHAP", "level": 75 }
       ]
     },
     {
       "name": "Databases",
       "skills": [
         { "name": "PostgreSQL", "level": 90 },
-        { "name": "MongoDB", "level": 75 },
-        { "name": "Redis", "level": 80 },
-        { "name": "SQLite", "level": 85 }
+        { "name": "MySQL", "level": 85 },
+        { "name": "MSSQL", "level": 80 }
       ]
     },
     {
@@ -44,9 +46,16 @@
       "skills": [
         { "name": "Docker", "level": 85 },
         { "name": "Git", "level": 95 },
-        { "name": "CI/CD", "level": 80 },
-        { "name": "AWS", "level": 75 },
-        { "name": "Linux", "level": 90 }
+        { "name": "GitHub Actions", "level": 85 },
+        { "name": "VS Code", "level": 90 },
+        { "name": "IntelliJ IDEA", "level": 80 }
+      ]
+    },
+    {
+      "name": "Testing",
+      "skills": [
+        { "name": "JUnit", "level": 75 },
+        { "name": "Jest", "level": 75 }
       ]
     }
   ]
