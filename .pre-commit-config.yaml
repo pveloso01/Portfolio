@@ -23,16 +23,6 @@ repos:
       - id: no-commit-to-branch
         args: [--branch, main, --branch, master]
 
-  # Python: Ruff (lint + format)
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.6.8
-    hooks:
-      - id: ruff
-        args: [--fix, --exit-non-zero-on-fix]
-        files: ^apps/api/
-      - id: ruff-format
-        files: ^apps/api/
-
   # JavaScript/TypeScript: ESLint
   - repo: https://github.com/pre-commit/mirrors-eslint
     rev: v9.17.0
@@ -55,7 +45,6 @@ repos:
         files: "\\.(js|jsx|ts|tsx|json|css|md|mdx|yaml|yml)$"
         exclude: |
           (?x)^(
-              apps/api/migrations/|
               apps/web/pnpm-lock.yaml|
               apps/web/.next/|
               apps/web/out/

@@ -47,35 +47,26 @@ This portfolio is designed to showcase professional development skills with:
 
 ### Frontend (`/apps/web`)
 
-| Category | Technologies |
-|----------|-------------|
-| **Framework** | Next.js 16 (Static Export), React 19 |
-| **Language** | TypeScript (Strict Mode) |
-| **Styling** | Tailwind CSS v4, CSS Modules |
-| **UI Components** | Radix UI, shadcn/ui |
-| **Content** | Markdown, gray-matter |
-| **Testing** | Vitest, React Testing Library, Playwright |
-| **Linting** | ESLint 9, Prettier |
-| **Package Manager** | pnpm |
-
-### Backend (`/apps/api`) - *For Local Development*
-
-| Category | Technologies |
-|----------|-------------|
-| **Framework** | Django 5, Django REST Framework |
-| **Language** | Python 3.12 |
-| **Database** | SQLite (dev), PostgreSQL (prod) |
-| **Linting** | Ruff (linter + formatter) |
+| Category            | Technologies                              |
+| ------------------- | ----------------------------------------- |
+| **Framework**       | Next.js 16 (Static Export), React 19      |
+| **Language**        | TypeScript (Strict Mode)                  |
+| **Styling**         | Tailwind CSS v4, CSS Modules              |
+| **UI Components**   | Radix UI, shadcn/ui                       |
+| **Content**         | Markdown, gray-matter                     |
+| **Testing**         | Vitest, React Testing Library, Playwright |
+| **Linting**         | ESLint 9, Prettier                        |
+| **Package Manager** | pnpm                                      |
 
 ### Infrastructure & DevOps
 
-| Category | Technologies |
-|----------|-------------|
-| **CI/CD** | GitHub Actions |
-| **Hosting** | GitHub Pages (Frontend) |
-| **Quality Gates** | Lighthouse CI, Codecov |
-| **Pre-commit** | Gitleaks, ESLint, Prettier, Ruff |
-| **Dependencies** | Dependabot |
+| Category          | Technologies                     |
+| ----------------- | -------------------------------- |
+| **CI/CD**         | GitHub Actions                   |
+| **Hosting**       | GitHub Pages (Frontend)          |
+| **Quality Gates** | Lighthouse CI, Codecov           |
+| **Pre-commit**    | Gitleaks, ESLint, Prettier, Ruff |
+| **Dependencies**  | Dependabot                       |
 
 ---
 
@@ -104,11 +95,6 @@ portfolio/
 │   │   ├── tailwind.config # Tailwind configuration
 │   │   ├── vitest.config.ts # Vitest configuration
 │   │   └── playwright.config.ts # Playwright configuration
-│   │
-│   └── api/                # Django Backend (optional)
-│       ├── api/            # Django project settings
-│       ├── core/           # Core app
-│       └── users/          # User management
 │
 ├── docs/                   # Documentation
 │   ├── architecture/       # Architecture Decision Records
@@ -132,7 +118,6 @@ portfolio/
 
 - **Node.js**: v20+ ([Download](https://nodejs.org/))
 - **pnpm**: v9+ ([Install](https://pnpm.io/installation))
-- **Python**: 3.12+ (for backend development)
 - **Git**: Latest version
 
 ### Installation
@@ -203,25 +188,6 @@ pnpm validate
 
 The development server will be available at [http://localhost:3000](http://localhost:3000).
 
-### Backend Development (Optional)
-
-```bash
-cd apps/api
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run migrations
-python manage.py migrate
-
-# Start development server
-python manage.py runserver
-```
-
 ---
 
 ## 🧪 Testing
@@ -269,6 +235,7 @@ Lighthouse CI runs automatically on pull requests to ensure performance standard
 Deployment happens automatically when pushing to the `main` branch:
 
 1. **Push to main branch**
+
 ```bash
 git push origin main
 ```
@@ -298,8 +265,8 @@ If deploying to a subdirectory (e.g., `username.github.io/portfolio`), update `n
 
 ```typescript
 const nextConfig = {
-  basePath: '/portfolio',
-  assetPrefix: '/portfolio',
+  basePath: "/portfolio",
+  assetPrefix: "/portfolio",
   // ... other config
 };
 ```
@@ -337,11 +304,6 @@ pnpm type-check
 pnpm lint
 pnpm format:check
 pnpm test run
-
-# Backend
-cd apps/api
-ruff check .
-ruff format --check .
 ```
 
 ---
@@ -378,6 +340,7 @@ This is a personal portfolio project. However, if you find bugs or have suggesti
 4. **Submit a Pull Request** with a clear description
 
 All contributions must pass:
+
 - ✅ Type checking
 - ✅ Linting
 - ✅ Tests
