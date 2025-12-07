@@ -1,0 +1,46 @@
+[
+  {
+    "id": "1",
+    "type": "work",
+    "title": "Senior Python Developer",
+    "company": "Tech Company",
+    "location": "Remote",
+    "startDate": "2022-01",
+    "endDate": null,
+    "current": true,
+    "description": "Leading back-end development for AI-powered applications, architecting scalable microservices with Python and Django."
+  },
+  {
+    "id": "2",
+    "type": "work",
+    "title": "Back-End Developer",
+    "company": "Startup Inc",
+    "location": "City, Country",
+    "startDate": "2020-06",
+    "endDate": "2021-12",
+    "current": false,
+    "description": "Developed RESTful APIs and implemented machine learning models for production systems."
+  },
+  {
+    "id": "3",
+    "type": "education",
+    "title": "MSc in Computer Science (In Progress)",
+    "company": "University Name",
+    "location": "City, Country",
+    "startDate": "2023-09",
+    "endDate": "2025-06",
+    "current": true,
+    "description": "Focus on Artificial Intelligence and Machine Learning. Dissertation on Federated Learning."
+  },
+  {
+    "id": "4",
+    "type": "education",
+    "title": "BSc in Computer Science",
+    "company": "University Name",
+    "location": "City, Country",
+    "startDate": "2017-09",
+    "endDate": "2020-06",
+    "current": false,
+    "description": "First Class Honours. Specialized in Software Engineering and Data Science."
+  }
+]
