@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.core.mail import send_mail
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -7,6 +9,7 @@ from rest_framework.views import APIView
 from .serializers import ContactFormSerializer
 
 
+@method_decorator(csrf_exempt, name="dispatch")
 class ContactFormView(APIView):
     """
     API endpoint for contact form submissions.
