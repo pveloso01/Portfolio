@@ -25,12 +25,14 @@ export function HeroSection() {
         setTimeout(() => setIsDeleting(true), 2000);
       } else if (isDeleting && displayedText === "") {
         setIsDeleting(false);
-        setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % heroContent.roles.length);
+        setCurrentRoleIndex(
+          (prevIndex) => (prevIndex + 1) % heroContent.roles.length
+        );
       } else {
         setDisplayedText(
           isDeleting
             ? currentRole.substring(0, displayedText.length - 1)
-            : currentRole.substring(0, displayedText.length + 1),
+            : currentRole.substring(0, displayedText.length + 1)
         );
       }
     }, typingSpeed);
@@ -51,7 +53,10 @@ export function HeroSection() {
         animate="visible"
       >
         <div className="mx-auto max-w-3xl text-center">
-          <motion.p className="text-primary text-base leading-7 font-semibold" variants={fadeIn}>
+          <motion.p
+            className="text-primary text-base leading-7 font-semibold"
+            variants={fadeIn}
+          >
             {heroContent.greeting}
           </motion.p>
           <motion.h1
@@ -70,18 +75,28 @@ export function HeroSection() {
               />
             </h2>
           </motion.div>
-          <motion.p className="text-foreground/80 mt-6 text-lg leading-8" variants={slideUp}>
+          <motion.p
+            className="text-foreground/80 mt-6 text-lg leading-8"
+            variants={slideUp}
+          >
             {heroContent.description}
           </motion.p>
-          <motion.div className="mt-10 flex items-center justify-center gap-x-6" variants={slideUp}>
+          <motion.div
+            className="mt-10 flex items-center justify-center gap-x-6"
+            variants={slideUp}
+          >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button size="lg" asChild>
-                <Link href={heroContent.cta.primary.href}>{heroContent.cta.primary.text}</Link>
+                <Link href={heroContent.cta.primary.href}>
+                  {heroContent.cta.primary.text}
+                </Link>
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button size="lg" variant="outline" asChild>
-                <Link href={heroContent.cta.secondary.href}>{heroContent.cta.secondary.text}</Link>
+                <Link href={heroContent.cta.secondary.href}>
+                  {heroContent.cta.secondary.text}
+                </Link>
               </Button>
             </motion.div>
           </motion.div>

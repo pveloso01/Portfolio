@@ -3,7 +3,7 @@ import type { Project } from "@/lib/types/project";
 export function filterProjects(
   projects: Project[],
   category: string,
-  searchQuery: string,
+  searchQuery: string
 ): Project[] {
   let filtered = projects;
 
@@ -17,7 +17,7 @@ export function filterProjects(
       (project) =>
         project.title.toLowerCase().includes(query) ||
         project.description.toLowerCase().includes(query) ||
-        project.tags.some((tag) => tag.toLowerCase().includes(query)),
+        project.tags.some((tag) => tag.toLowerCase().includes(query))
     );
   }
 

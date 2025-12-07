@@ -49,7 +49,12 @@
     "description": "Geospatial real estate investment platform for analyzing, ranking, and optimizing property deals across Portugal using ROI, rental yield, zoning data, and development feasibility metrics.",
     "longDescription": "Advanced geospatial platform designed to revolutionize real estate investment analysis in Portugal. The system combines property data, zoning regulations, market trends, and geographic information to provide comprehensive investment insights.\n\nThe platform features sophisticated algorithms that calculate ROI, rental yield projections, and development feasibility scores. It integrates multiple data sources including municipal zoning maps, historical transaction data, and demographic information to provide a holistic view of investment opportunities.\n\nUtilizing Python's geospatial libraries and advanced data visualization techniques, the platform presents complex information in an intuitive, map-based interface that allows investors to identify opportunities at a glance. Currently in active development with ongoing feature enhancements and data pipeline improvements.",
     "category": "Data Analysis",
-    "tags": ["Python", "Geospatial Analysis", "Real Estate", "Data Visualization"],
+    "tags": [
+      "Python",
+      "Geospatial Analysis",
+      "Real Estate",
+      "Data Visualization"
+    ],
     "featured": true,
     "image": "/placeholder-project-2.jpg",
     "github": "https://github.com/pveloso01/Atlas-Investor",

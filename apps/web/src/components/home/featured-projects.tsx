@@ -9,7 +9,9 @@ import projectsData from "@/lib/data/projects.json";
 const data = projectsData as Project[];
 
 export function FeaturedProjects() {
-  const featuredProjects = data.filter((project) => project.featured).slice(0, 3);
+  const featuredProjects = data
+    .filter((project) => project.featured)
+    .slice(0, 3);
 
   return (
     <section className="py-24 sm:py-32">
@@ -19,7 +21,8 @@ export function FeaturedProjects() {
             Featured Projects
           </h2>
           <p className="text-muted-foreground mt-4 text-lg leading-8">
-            A selection of my recent work in machine learning, data engineering, and web development
+            A selection of my recent work in machine learning, data engineering,
+            and web development
           </p>
         </div>
 

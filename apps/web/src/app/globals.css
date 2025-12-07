@@ -256,7 +256,12 @@
   }
 
   .gradient-bg {
-    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--primary));
+    background: linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary),
+      var(--primary)
+    );
     background-size: 200% 200%;
     animation: gradient-shift 8s ease infinite;
   }

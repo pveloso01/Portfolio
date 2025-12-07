@@ -38,7 +38,10 @@ export function Footer() {
   return (
     <footer className="bg-background border-border/40 border-t">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:py-16 lg:px-8">
-        <nav className="-mb-6 flex flex-wrap justify-center gap-x-8 gap-y-3" aria-label="Footer">
+        <nav
+          className="-mb-6 flex flex-wrap justify-center gap-x-8 gap-y-3"
+          aria-label="Footer"
+        >
           {navigation.main.map((item) => (
             <Link
               key={item.name}

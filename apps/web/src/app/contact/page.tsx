@@ -78,8 +78,8 @@ export default function ContactPage() {
               </span>
             </h1>
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg md:text-xl">
-              Have a project in mind or want to collaborate? I&apos;m always excited to discuss new
-              opportunities and innovative ideas.
+              Have a project in mind or want to collaborate? I&apos;m always
+              excited to discuss new opportunities and innovative ideas.
             </p>
           </motion.div>
         </div>
@@ -100,10 +100,13 @@ export default function ContactPage() {
                 <div className="bg-primary/10 mb-6 inline-flex rounded-full p-4">
                   <Mail className="text-primary h-8 w-8" />
                 </div>
-                <h2 className="mb-3 text-2xl font-bold">Ready to Start a Conversation?</h2>
+                <h2 className="mb-3 text-2xl font-bold">
+                  Ready to Start a Conversation?
+                </h2>
                 <p className="text-muted-foreground mb-8">
-                  Click below to compose an email. Whether it&apos;s about a project, collaboration,
-                  or just to say hello, I&apos;d love to hear from you!
+                  Click below to compose an email. Whether it&apos;s about a
+                  project, collaboration, or just to say hello, I&apos;d love to
+                  hear from you!
                 </p>
                 <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                   <Button size="lg" className="w-full sm:w-auto" asChild>
@@ -133,9 +136,15 @@ export default function ContactPage() {
                     <div className="bg-primary/10 mb-4 inline-flex rounded-lg p-3">
                       <Icon className="text-primary h-6 w-6" />
                     </div>
-                    <h3 className="mb-2 text-lg font-semibold">{method.label}</h3>
-                    <p className="text-foreground mb-2 text-xl font-bold">{method.value}</p>
-                    <p className="text-muted-foreground text-sm">{method.description}</p>
+                    <h3 className="mb-2 text-lg font-semibold">
+                      {method.label}
+                    </h3>
+                    <p className="text-foreground mb-2 text-xl font-bold">
+                      {method.value}
+                    </p>
+                    <p className="text-muted-foreground text-sm">
+                      {method.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -154,7 +163,9 @@ export default function ContactPage() {
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <Card>
               <CardContent className="p-8">
-                <h3 className="mb-6 text-center text-xl font-semibold">Connect on Social Media</h3>
+                <h3 className="mb-6 text-center text-xl font-semibold">
+                  Connect on Social Media
+                </h3>
                 <div className="flex justify-center gap-6">
                   {socialLinks.map((social) => {
                     const Icon = social.icon;
@@ -190,7 +201,8 @@ export default function ContactPage() {
           className="mt-16 text-center"
         >
           <p className="text-muted-foreground">
-            I typically respond within 24-48 hours. Looking forward to connecting with you!
+            I typically respond within 24-48 hours. Looking forward to
+            connecting with you!
           </p>
         </motion.div>
       </div>

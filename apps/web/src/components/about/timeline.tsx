@@ -24,7 +24,12 @@ export function Timeline() {
         {/* Work Experience */}
         <div>
           <h3 className="text-primary mb-8 flex items-center gap-2 text-xl font-semibold">
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -54,11 +59,14 @@ export function Timeline() {
                     {exp.company} • {exp.location}
                   </div>
                   <time className="text-primary text-xs font-medium">
-                    {formatDate(exp.startDate, false)} - {formatDate(exp.endDate, exp.current)}
+                    {formatDate(exp.startDate, false)} -{" "}
+                    {formatDate(exp.endDate, exp.current)}
                   </time>
                 </div>
 
-                <div className="text-foreground/80 text-sm leading-relaxed">{exp.description}</div>
+                <div className="text-foreground/80 text-sm leading-relaxed">
+                  {exp.description}
+                </div>
               </div>
             ))}
           </div>
@@ -67,7 +75,12 @@ export function Timeline() {
         {/* Education */}
         <div>
           <h3 className="text-secondary mb-8 flex items-center gap-2 text-xl font-semibold">
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -109,11 +122,14 @@ export function Timeline() {
                     {exp.company} • {exp.location}
                   </div>
                   <time className="text-secondary text-xs font-medium">
-                    {formatDate(exp.startDate, false)} - {formatDate(exp.endDate, exp.current)}
+                    {formatDate(exp.startDate, false)} -{" "}
+                    {formatDate(exp.endDate, exp.current)}
                   </time>
                 </div>
 
-                <div className="text-foreground/80 text-sm leading-relaxed">{exp.description}</div>
+                <div className="text-foreground/80 text-sm leading-relaxed">
+                  {exp.description}
+                </div>
               </div>
             ))}
           </div>

@@ -5,7 +5,10 @@ import { ProjectCard } from "@/components/projects/project-card";
 import { ProjectFilter } from "@/components/projects/project-filter";
 import projectsData from "@/lib/data/projects.json";
 import type { Project } from "@/lib/types/project";
-import { filterProjects, getUniqueCategories } from "@/lib/utils/project-filters";
+import {
+  filterProjects,
+  getUniqueCategories,
+} from "@/lib/utils/project-filters";
 
 const data = projectsData as Project[];
 
@@ -24,7 +27,7 @@ export default function ProjectsPage() {
   const categories = useMemo(() => getUniqueCategories(data), []);
   const filteredProjects = useMemo(
     () => filterProjects(data, selectedCategory, searchQuery),
-    [selectedCategory, searchQuery],
+    [selectedCategory, searchQuery]
   );
 
   // Show loading state until mounted
@@ -49,7 +52,9 @@ export default function ProjectsPage() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto mb-16 max-w-2xl text-center">
-        <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-6xl">Projects</h1>
+        <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-6xl">
+          Projects
+        </h1>
         <p className="text-muted-foreground mt-6 text-lg leading-8">
           Explore my portfolio of Python, AI/ML, and web development projects
         </p>
@@ -71,7 +76,9 @@ export default function ProjectsPage() {
         </div>
       ) : (
         <div className="py-12 text-center">
-          <p className="text-muted-foreground text-lg">No projects found matching your criteria.</p>
+          <p className="text-muted-foreground text-lg">
+            No projects found matching your criteria.
+          </p>
         </div>
       )}
     </div>
