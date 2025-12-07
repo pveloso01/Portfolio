@@ -3,11 +3,7 @@ import { SkillsGrid } from "@/components/about/skills-grid";
 import { Timeline } from "@/components/about/timeline";
 import { Certifications } from "@/components/about/certifications";
 
-export const metadata = {
-  title: "About - Portfolio",
-  description:
-    "Learn more about my background, skills, and experience in Python and AI/ML development",
-};
+export { metadata } from "./metadata";
 
 export default function AboutPage() {
   return (

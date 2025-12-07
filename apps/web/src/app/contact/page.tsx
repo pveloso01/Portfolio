@@ -1,6 +1,8 @@
 import { ContactForm } from "@/components/contact/contact-form";
 import { ContactInfo } from "@/components/contact/contact-info";
 
+export { metadata } from "./metadata";
+
 export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-16 max-w-7xl">
