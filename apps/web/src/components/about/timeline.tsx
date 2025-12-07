@@ -16,15 +16,15 @@ export function Timeline() {
 
   return (
     <section className="mb-24">
-      <h2 className="text-3xl font-bold tracking-tight text-foreground mb-12 text-center">
+      <h2 className="text-foreground mb-12 text-center text-3xl font-bold tracking-tight">
         Experience & Education
       </h2>
 
       <div className="grid gap-12 md:grid-cols-2">
         {/* Work Experience */}
         <div>
-          <h3 className="text-xl font-semibold text-primary mb-8 flex items-center gap-2">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <h3 className="text-primary mb-8 flex items-center gap-2 text-xl font-semibold">
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -38,27 +38,27 @@ export function Timeline() {
             {workExperience.map((exp) => (
               <div
                 key={exp.id}
-                className="relative pl-8 pb-8 border-l-2 border-primary/30 group hover:border-primary/60 transition-colors"
+                className="border-primary/30 group hover:border-primary/60 relative border-l-2 pb-8 pl-8 transition-colors"
               >
-                <div className="absolute -left-3 top-0 flex items-center justify-center w-6 h-6 rounded-full bg-background border-2 border-primary shadow-lg group-hover:scale-125 transition-transform">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
+                <div className="bg-background border-primary absolute top-0 -left-3 flex h-6 w-6 items-center justify-center rounded-full border-2 shadow-lg transition-transform group-hover:scale-125">
+                  <div className="bg-primary h-2 w-2 rounded-full" />
                 </div>
 
                 <div className="mb-3">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">
+                  <div className="mb-1 flex items-center gap-2">
+                    <h4 className="text-foreground group-hover:text-primary font-bold transition-colors">
                       {exp.title}
                     </h4>
                   </div>
-                  <div className="text-sm text-muted-foreground mb-1">
+                  <div className="text-muted-foreground mb-1 text-sm">
                     {exp.company} • {exp.location}
                   </div>
-                  <time className="text-xs font-medium text-primary">
+                  <time className="text-primary text-xs font-medium">
                     {formatDate(exp.startDate, false)} - {formatDate(exp.endDate, exp.current)}
                   </time>
                 </div>
 
-                <div className="text-sm text-foreground/80 leading-relaxed">{exp.description}</div>
+                <div className="text-foreground/80 text-sm leading-relaxed">{exp.description}</div>
               </div>
             ))}
           </div>
@@ -66,8 +66,8 @@ export function Timeline() {
 
         {/* Education */}
         <div>
-          <h3 className="text-xl font-semibold text-secondary mb-8 flex items-center gap-2">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <h3 className="text-secondary mb-8 flex items-center gap-2 text-xl font-semibold">
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -93,27 +93,27 @@ export function Timeline() {
             {education.map((exp) => (
               <div
                 key={exp.id}
-                className="relative pl-8 pb-8 border-l-2 border-secondary/30 group hover:border-secondary/60 transition-colors"
+                className="border-secondary/30 group hover:border-secondary/60 relative border-l-2 pb-8 pl-8 transition-colors"
               >
-                <div className="absolute -left-3 top-0 flex items-center justify-center w-6 h-6 rounded-full bg-background border-2 border-secondary shadow-lg group-hover:scale-125 transition-transform">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
+                <div className="bg-background border-secondary absolute top-0 -left-3 flex h-6 w-6 items-center justify-center rounded-full border-2 shadow-lg transition-transform group-hover:scale-125">
+                  <div className="bg-secondary h-2 w-2 rounded-full" />
                 </div>
 
                 <div className="mb-3">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h4 className="font-bold text-foreground group-hover:text-secondary transition-colors">
+                  <div className="mb-1 flex items-center gap-2">
+                    <h4 className="text-foreground group-hover:text-secondary font-bold transition-colors">
                       {exp.title}
                     </h4>
                   </div>
-                  <div className="text-sm text-muted-foreground mb-1">
+                  <div className="text-muted-foreground mb-1 text-sm">
                     {exp.company} • {exp.location}
                   </div>
-                  <time className="text-xs font-medium text-secondary">
+                  <time className="text-secondary text-xs font-medium">
                     {formatDate(exp.startDate, false)} - {formatDate(exp.endDate, exp.current)}
                   </time>
                 </div>
 
-                <div className="text-sm text-foreground/80 leading-relaxed">{exp.description}</div>
+                <div className="text-foreground/80 text-sm leading-relaxed">{exp.description}</div>
               </div>
             ))}
           </div>

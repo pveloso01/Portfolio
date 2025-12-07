@@ -15,10 +15,10 @@ export function FeaturedProjects() {
     <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl">
             Featured Projects
           </h2>
-          <p className="mt-4 text-lg leading-8 text-muted-foreground">
+          <p className="text-muted-foreground mt-4 text-lg leading-8">
             A selection of my recent work in machine learning, data engineering, and web development
           </p>
         </div>

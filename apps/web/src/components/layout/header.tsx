@@ -15,20 +15,20 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-xl font-bold text-gradient">Portfolio</span>
+            <span className="text-gradient text-xl font-bold">Portfolio</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground"
+            className="text-foreground -m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Toggle menu</span>
@@ -57,7 +57,7 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium leading-6 text-foreground/80 transition-colors hover:text-primary"
+              className="text-foreground/80 hover:text-primary text-sm leading-6 font-medium transition-colors"
             >
               {item.name}
             </Link>
@@ -71,13 +71,13 @@ export function Header() {
       </nav>
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden animate-slide-in-down">
-          <div className="space-y-2 px-6 pb-6 pt-2">
+        <div className="animate-slide-in-down lg:hidden">
+          <div className="space-y-2 px-6 pt-2 pb-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-foreground hover:bg-muted"
+                className="text-foreground hover:bg-muted block rounded-lg px-3 py-2 text-base leading-7 font-semibold"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}

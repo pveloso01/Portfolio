@@ -13,7 +13,7 @@ export function SkillsGrid() {
   return (
     <section className="mb-24">
       <motion.h2
-        className="text-3xl font-bold tracking-tight text-foreground mb-12 text-center"
+        className="text-foreground mb-12 text-center text-3xl font-bold tracking-tight"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewportOnce}
@@ -33,7 +33,7 @@ export function SkillsGrid() {
             transition={{ delay: index * 0.1 }}
             whileHover={{ y: -4, scale: 1.02 }}
           >
-            <Card className="group hover:border-primary/50 transition-all duration-300 h-full">
+            <Card className="group hover:border-primary/50 h-full transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-xl">{category.name}</CardTitle>
               </CardHeader>
@@ -43,7 +43,7 @@ export function SkillsGrid() {
                     <Badge
                       key={skill.name}
                       variant="secondary"
-                      className="text-sm px-3 py-1 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                      className="hover:bg-primary hover:text-primary-foreground cursor-default px-3 py-1 text-sm transition-colors"
                     >
                       {skill.name}
                     </Badge>

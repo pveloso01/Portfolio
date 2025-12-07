@@ -36,14 +36,14 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background border-t border-border/40">
+    <footer className="bg-background border-border/40 border-t">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:py-16 lg:px-8">
         <nav className="-mb-6 flex flex-wrap justify-center gap-x-8 gap-y-3" aria-label="Footer">
           {navigation.main.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm leading-6 text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-foreground text-sm leading-6 transition-colors"
             >
               {item.name}
             </Link>
@@ -63,7 +63,7 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <p className="mt-10 text-center text-xs leading-5 text-muted-foreground">
+        <p className="text-muted-foreground mt-10 text-center text-xs leading-5">
           &copy; {currentYear} Portfolio. Built using modern web technologies.
         </p>
       </div>

@@ -44,7 +44,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       <div className="mb-8">
         <Link
           href="/projects"
-          className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+          className="text-muted-foreground hover:text-primary inline-flex items-center text-sm transition-colors"
         >
           <svg className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path
@@ -59,21 +59,21 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       </div>
 
       {/* Hero Section */}
-      <div className="space-y-6 mb-12">
-        <div className="flex items-center gap-3 flex-wrap">
+      <div className="mb-12 space-y-6">
+        <div className="flex flex-wrap items-center gap-3">
           <Badge variant="secondary" className="text-sm">
             {project.category}
           </Badge>
           {project.status === "in-progress" && (
             <Badge variant="default" className="text-sm">
-              <span className="relative flex h-2 w-2 mr-1.5">
+              <span className="relative mr-1.5 flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
               </span>
               In Progress
             </Badge>
           )}
-          <span className="text-sm text-muted-foreground">
+          <span className="text-muted-foreground text-sm">
             {project.status === "in-progress" ? "Started " : ""}
             {new Date(project.date).toLocaleDateString("en-US", {
               month: "long",
@@ -82,11 +82,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </span>
         </div>
 
-        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           {project.title}
         </h1>
 
-        <p className="text-xl text-foreground/80 leading-relaxed max-w-3xl">
+        <p className="text-foreground/80 max-w-3xl text-xl leading-relaxed">
           {project.description}
         </p>
 
@@ -124,9 +124,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         {/* Main Content */}
-        <div className="lg:col-span-2 space-y-8">
+        <div className="space-y-8 lg:col-span-2">
           {/* About Section */}
           <Card>
             <CardHeader>
@@ -150,7 +150,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   {project.highlights.map((highlight, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <svg
-                        className="h-5 w-5 text-primary mt-0.5 flex-shrink-0"
+                        className="text-primary mt-0.5 h-5 w-5 flex-shrink-0"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -181,7 +181,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   {project.challenges.map((challenge, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <svg
-                        className="h-5 w-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                        className="mt-0.5 h-5 w-5 flex-shrink-0 text-yellow-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -224,13 +224,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <CardContent className="space-y-4 text-sm">
               {project.status && (
                 <div>
-                  <dt className="font-semibold text-foreground mb-1">Status</dt>
+                  <dt className="text-foreground mb-1 font-semibold">Status</dt>
                   <dd className="text-muted-foreground">
                     {project.status === "in-progress" && (
                       <span className="inline-flex items-center gap-1.5">
                         <span className="relative flex h-2 w-2">
-                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
-                          <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                          <span className="bg-primary absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
+                          <span className="bg-primary relative inline-flex h-2 w-2 rounded-full" />
                         </span>
                         In Progress
                       </span>
@@ -242,24 +242,24 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               )}
               {project.role && (
                 <div>
-                  <dt className="font-semibold text-foreground mb-1">Role</dt>
+                  <dt className="text-foreground mb-1 font-semibold">Role</dt>
                   <dd className="text-muted-foreground">{project.role}</dd>
                 </div>
               )}
               {project.duration && (
                 <div>
-                  <dt className="font-semibold text-foreground mb-1">Duration</dt>
+                  <dt className="text-foreground mb-1 font-semibold">Duration</dt>
                   <dd className="text-muted-foreground">{project.duration}</dd>
                 </div>
               )}
               {project.teamSize && (
                 <div>
-                  <dt className="font-semibold text-foreground mb-1">Team Size</dt>
+                  <dt className="text-foreground mb-1 font-semibold">Team Size</dt>
                   <dd className="text-muted-foreground">{project.teamSize}</dd>
                 </div>
               )}
               <div>
-                <dt className="font-semibold text-foreground mb-1">
+                <dt className="text-foreground mb-1 font-semibold">
                   {project.status === "in-progress" ? "Started" : "Timeline"}
                 </dt>
                 <dd className="text-muted-foreground">
@@ -305,7 +305,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary flex items-center gap-2 text-sm transition-colors"
                   >
                     <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                       <path
@@ -322,7 +322,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary flex items-center gap-2 text-sm transition-colors"
                   >
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path

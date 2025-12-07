@@ -7,15 +7,15 @@ export { metadata } from "./metadata";
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-7xl">
+    <div className="container mx-auto max-w-7xl px-4 py-16">
       <div className="mb-16 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
-        <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+        <h1 className="mb-4 text-4xl font-bold md:text-5xl">Get In Touch</h1>
+        <p className="text-foreground/70 mx-auto max-w-2xl text-xl">
           Have a project in mind or want to collaborate? I&apos;d love to hear from you.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
         {/* Contact Info */}
         <div className="lg:col-span-1">
           <ContactInfo />
@@ -26,7 +26,7 @@ export default function ContactPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Mail className="w-5 h-5" />
+                <Mail className="h-5 w-5" />
                 Send Me an Email
               </CardTitle>
             </CardHeader>
@@ -38,13 +38,13 @@ export default function ContactPage() {
 
               <Button size="lg" className="w-full md:w-auto" asChild>
                 <a href="mailto:pedrovelosofernandes@outlook.com?subject=Contact%20from%20Portfolio">
-                  <Send className="w-4 h-4 mr-2" />
+                  <Send className="mr-2 h-4 w-4" />
                   Email Me
                 </a>
               </Button>
 
-              <div className="pt-4 border-t border-border">
-                <p className="text-sm text-muted-foreground">
+              <div className="border-border border-t pt-4">
+                <p className="text-muted-foreground text-sm">
                   <strong>Email:</strong>{" "}
                   <a
                     href="mailto:pedrovelosofernandes@outlook.com"

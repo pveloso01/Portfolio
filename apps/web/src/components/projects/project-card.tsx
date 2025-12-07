@@ -28,9 +28,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.3 }}
     >
-      <Card className="group hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 flex flex-col h-full">
+      <Card className="group hover:border-primary/50 hover:shadow-primary/10 flex h-full flex-col transition-all duration-300 hover:shadow-lg">
         <CardHeader>
-          <div className="flex items-start justify-between mb-2">
+          <div className="mb-2 flex items-start justify-between">
             <Badge variant="secondary">{project.category}</Badge>
             <div className="flex gap-2">
               {project.github && (
@@ -90,7 +90,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </CardContent>
         <CardFooter>
-          <Button variant="ghost" asChild className="w-full group-hover:bg-primary/10">
+          <Button variant="ghost" asChild className="group-hover:bg-primary/10 w-full">
             <Link href={`/projects/${project.slug}`}>View Details →</Link>
           </Button>
         </CardFooter>

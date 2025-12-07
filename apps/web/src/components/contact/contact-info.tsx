@@ -47,7 +47,7 @@ export function ContactInfo() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
+        <h2 className="mb-4 text-2xl font-bold">Contact Information</h2>
         <p className="text-foreground/70 mb-6">
           Feel free to reach out through any of these channels. I&apos;m always open to discussing
           new projects, opportunities, or collaborations.
@@ -60,15 +60,15 @@ export function ContactInfo() {
           const content = (
             <Card
               className={`transition-all duration-300 ${
-                detail.href ? "hover:scale-105 cursor-pointer" : ""
+                detail.href ? "cursor-pointer hover:scale-105" : ""
               }`}
             >
-              <CardContent className="p-4 flex items-start gap-4">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Icon className="w-5 h-5 text-primary" />
+              <CardContent className="flex items-start gap-4 p-4">
+                <div className="bg-primary/10 rounded-lg p-2">
+                  <Icon className="text-primary h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-foreground/60 mb-1">{detail.label}</p>
+                  <p className="text-foreground/60 mb-1 text-sm">{detail.label}</p>
                   <p className="font-medium">{detail.value}</p>
                 </div>
               </CardContent>
@@ -86,7 +86,7 @@ export function ContactInfo() {
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold mb-4">Connect With Me</h3>
+        <h3 className="mb-4 text-lg font-semibold">Connect With Me</h3>
         <div className="flex gap-4">
           {socialLinks.map((social) => (
             <a
@@ -94,10 +94,10 @@ export function ContactInfo() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-lg bg-card hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+              className="bg-card hover:bg-primary/10 rounded-lg p-3 transition-all duration-300 hover:scale-110"
               aria-label={social.name}
             >
-              <social.icon className="w-6 h-6" />
+              <social.icon className="h-6 w-6" />
             </a>
           ))}
         </div>

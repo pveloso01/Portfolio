@@ -9,7 +9,7 @@ export const dynamic = "force-static";
 
 export default function Demo() {
   return (
-    <main className="mx-auto max-w-3xl p-8 space-y-6">
+    <main className="mx-auto max-w-3xl space-y-6 p-8">
       <h1 className="text-3xl font-bold">UI Demo</h1>
 
       <Card className="rounded-2xl">
