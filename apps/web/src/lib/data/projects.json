@@ -22,9 +22,8 @@
     "image": "/placeholder-project-1.jpg",
     "github": null,
     "demo": null,
-    "date": "2024-02-01",
-    "endDate": "2024-10-01",
-    "status": "completed",
+    "date": "2024-09-01",
+    "status": "in-progress",
     "highlights": [
       "Achieved 95%+ accuracy in day-ahead market predictions using ensemble methods",
       "Processed and analyzed over 1M+ data points daily with automated ETL pipelines",
@@ -38,9 +37,9 @@
       "Optimizing model inference performance for sub-second prediction requirements",
       "Building robust error handling for production deployment with 99.9% uptime"
     ],
-    "outcome": "Successfully completed as Master's thesis, demonstrating significant improvement over baseline models. The platform provides actionable insights for energy market participants and serves as a foundation for future commercial applications.",
+    "outcome": "Ongoing Master's thesis project demonstrating significant improvement over baseline models. The platform provides actionable insights for energy market participants and serves as a foundation for future commercial applications.",
     "role": "Lead Developer & ML Engineer",
-    "duration": "9 months",
+    "duration": "Ongoing since September 2024",
     "teamSize": "Solo project with academic supervision"
   },
   {
