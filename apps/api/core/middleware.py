@@ -42,10 +42,7 @@ class IPWhitelistMiddleware:
 
     def _should_check_ip(self, path):
         """Check if the request path should be IP-protected."""
-        for protected_path in self.protected_paths:
-            if path.startswith(protected_path):
-                return True
-        return False
+        return any(path.startswith(protected_path) for protected_path in self.protected_paths)
 
     def _is_ip_whitelisted(self, ip_address):
         """Check if an IP address is whitelisted."""
@@ -55,10 +52,7 @@ class IPWhitelistMiddleware:
 
         # Check settings-based whitelist (for development)
         settings_whitelist = getattr(settings, "IP_WHITELIST_ADDRESSES", [])
-        if ip_address in settings_whitelist:
-            return True
-
-        return False
+        return ip_address in settings_whitelist
 
     def _get_client_ip(self, request):
         """Extract client IP address from request, considering proxies."""

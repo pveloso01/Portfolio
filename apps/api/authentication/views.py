@@ -1,3 +1,4 @@
+from core.throttling import LoginThrottle, TokenRefreshThrottle
 from django.utils import timezone
 from drf_spectacular.utils import extend_schema
 from rest_framework import status
@@ -7,10 +8,12 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
 from rest_framework_simplejwt.tokens import RefreshToken as SimpleJWTRefreshToken
 
-from core.throttling import LoginThrottle, TokenRefreshThrottle
-
-from .jwt_utils import blacklist_token, generate_tokens_for_user
-from .serializers import LoginSerializer, LogoutSerializer, TokenRefreshSerializer
+from authentication.jwt_utils import blacklist_token, generate_tokens_for_user
+from authentication.serializers import (
+    LoginSerializer,
+    LogoutSerializer,
+    TokenRefreshSerializer,
+)
 
 
 class LoginView(APIView):

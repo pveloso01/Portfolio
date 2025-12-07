@@ -42,11 +42,11 @@ class SendVerificationEmailView(APIView):
             )
 
         # Generate verification token
-        uid = urlsafe_base64_encode(force_bytes(user.pk))
-        token = default_token_generator.make_token(user)
+        _uid = urlsafe_base64_encode(force_bytes(user.pk))
+        _token = default_token_generator.make_token(user)
 
-        # TODO: Send verification email with uid and token
-        # The frontend should construct: /verify-email/{uid}/{token}
+        # TODO: Send verification email with _uid and _token
+        # The frontend should construct: /verify-email/{_uid}/{_token}
 
         return Response(
             {"detail": "Verification email sent."},
@@ -144,10 +144,10 @@ class ResendVerificationEmailView(APIView):
 
             if not user.is_verified:
                 # Generate verification token
-                uid = urlsafe_base64_encode(force_bytes(user.pk))
-                token = default_token_generator.make_token(user)
+                _uid = urlsafe_base64_encode(force_bytes(user.pk))
+                _token = default_token_generator.make_token(user)
 
-                # TODO: Send verification email with uid and token
+                # TODO: Send verification email with _uid and _token
 
         except User.DoesNotExist:
             # Don't reveal that user doesn't exist

@@ -62,9 +62,9 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Gradient */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-background py-20">
-        <div className="absolute inset-0 bg-grid-white/5 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-        <div className="container relative mx-auto max-w-4xl px-4 text-center">
+      <div className="from-primary/10 via-background to-background relative overflow-hidden bg-gradient-to-br py-20">
+        <div className="bg-grid-white/5 absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+        <div className="relative container mx-auto max-w-4xl px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,12 +72,12 @@ export default function ContactPage() {
           >
             <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
               Let&apos;s Work
-              <span className="bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+              <span className="from-primary bg-gradient-to-r to-purple-400 bg-clip-text text-transparent">
                 {" "}
                 Together
               </span>
             </h1>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg md:text-xl">
               Have a project in mind or want to collaborate? I&apos;m always excited to discuss new
               opportunities and innovative ideas.
             </p>
@@ -95,13 +95,13 @@ export default function ContactPage() {
         >
           {/* Primary CTA - Email */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
-            <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
+            <Card className="border-primary/20 from-primary/5 bg-gradient-to-br to-transparent">
               <CardContent className="p-8 text-center">
-                <div className="mb-6 inline-flex rounded-full bg-primary/10 p-4">
-                  <Mail className="h-8 w-8 text-primary" />
+                <div className="bg-primary/10 mb-6 inline-flex rounded-full p-4">
+                  <Mail className="text-primary h-8 w-8" />
                 </div>
                 <h2 className="mb-3 text-2xl font-bold">Ready to Start a Conversation?</h2>
-                <p className="mb-8 text-muted-foreground">
+                <p className="text-muted-foreground mb-8">
                   Click below to compose an email. Whether it&apos;s about a project, collaboration,
                   or just to say hello, I&apos;d love to hear from you!
                 </p>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                   </Button>
                   <a
                     href="mailto:pedrovelosofernandes@outlook.com"
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
                   >
                     pedrovelosofernandes@outlook.com
                   </a>
@@ -128,14 +128,14 @@ export default function ContactPage() {
             const Icon = method.icon;
             const content = (
               <motion.div variants={itemVariants}>
-                <Card className="h-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+                <Card className="hover:border-primary/50 hover:shadow-primary/5 h-full transition-all duration-300 hover:shadow-lg">
                   <CardContent className="p-6">
-                    <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
-                      <Icon className="h-6 w-6 text-primary" />
+                    <div className="bg-primary/10 mb-4 inline-flex rounded-lg p-3">
+                      <Icon className="text-primary h-6 w-6" />
                     </div>
                     <h3 className="mb-2 text-lg font-semibold">{method.label}</h3>
-                    <p className="mb-2 text-xl font-bold text-foreground">{method.value}</p>
-                    <p className="text-sm text-muted-foreground">{method.description}</p>
+                    <p className="text-foreground mb-2 text-xl font-bold">{method.value}</p>
+                    <p className="text-muted-foreground text-sm">{method.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -164,13 +164,13 @@ export default function ContactPage() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`group flex flex-col items-center gap-3 rounded-lg p-6 transition-all duration-300 hover:bg-primary/5 ${social.color}`}
+                        className={`group hover:bg-primary/5 flex flex-col items-center gap-3 rounded-lg p-6 transition-all duration-300 ${social.color}`}
                         aria-label={social.name}
                       >
-                        <div className="rounded-full bg-card p-4 shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
+                        <div className="bg-card rounded-full p-4 shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl">
                           <Icon className="h-8 w-8" />
                         </div>
-                        <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground">
+                        <span className="text-muted-foreground group-hover:text-foreground text-sm font-medium">
                           {social.name}
                         </span>
                       </a>

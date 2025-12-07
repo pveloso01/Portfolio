@@ -89,7 +89,7 @@ class PasswordChangeSerializer(serializers.Serializer):
         try:
             validate_password(new_password, self.context["request"].user)
         except DjangoValidationError as e:
-            raise serializers.ValidationError({"new_password": list(e.messages)})
+            raise serializers.ValidationError({"new_password": list(e.messages)}) from e
 
         return attrs
 
@@ -128,7 +128,7 @@ class PasswordResetConfirmSerializer(serializers.Serializer):
         try:
             validate_password(new_password)
         except DjangoValidationError as e:
-            raise serializers.ValidationError({"new_password": list(e.messages)})
+            raise serializers.ValidationError({"new_password": list(e.messages)}) from e
 
         return attrs
 

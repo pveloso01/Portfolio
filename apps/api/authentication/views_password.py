@@ -100,11 +100,11 @@ class PasswordResetRequestView(APIView):
             user = User.objects.get(email=email, is_active=True)
 
             # Generate reset token
-            uid = urlsafe_base64_encode(force_bytes(user.pk))
-            token = default_token_generator.make_token(user)
+            _uid = urlsafe_base64_encode(force_bytes(user.pk))
+            _token = default_token_generator.make_token(user)
 
-            # TODO: Send password reset email with uid and token
-            # The frontend should construct: /reset-password/{uid}/{token}
+            # TODO: Send password reset email with _uid and _token
+            # The frontend should construct: /reset-password/{_uid}/{_token}
 
         except User.DoesNotExist:
             # Don't reveal that user doesn't exist (prevent enumeration)

@@ -78,9 +78,7 @@ class User(AbstractUser):
 
     def is_locked(self):
         """Check if the account is currently locked."""
-        if self.locked_until and self.locked_until > timezone.now():
-            return True
-        return False
+        return bool(self.locked_until and self.locked_until > timezone.now())
 
     def reset_failed_attempts(self):
         """Reset failed login attempts counter."""

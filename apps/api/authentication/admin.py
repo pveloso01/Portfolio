@@ -60,7 +60,14 @@ class LoginAttemptAdmin(admin.ModelAdmin):
     list_display = ("email", "ip_address", "success", "timestamp", "failure_reason")
     list_filter = ("success", "timestamp")
     search_fields = ("email", "ip_address")
-    readonly_fields = ("email", "ip_address", "user_agent", "success", "failure_reason", "timestamp")
+    readonly_fields = (
+        "email",
+        "ip_address",
+        "user_agent",
+        "success",
+        "failure_reason",
+        "timestamp",
+    )
     ordering = ("-timestamp",)
 
     def has_add_permission(self, request):
