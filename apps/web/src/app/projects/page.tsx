@@ -9,8 +9,30 @@ import {
   filterProjects,
   getUniqueCategories,
 } from "@/lib/utils/project-filters";
+import { motion } from "framer-motion";
 
 const data = projectsData as Project[];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -51,35 +73,58 @@ export default function ProjectsPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-      <div className="mx-auto mb-16 max-w-2xl text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mx-auto mb-16 max-w-2xl text-center"
+      >
         <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-6xl">
           Projects
         </h1>
         <p className="text-muted-foreground mt-6 text-lg leading-8">
           Explore my portfolio of Python, AI/ML, and web development projects
         </p>
-      </div>
+      </motion.div>
 
-      <ProjectFilter
-        categories={categories}
-        selectedCategory={selectedCategory}
-        searchQuery={searchQuery}
-        onCategoryChange={setSelectedCategory}
-        onSearchChange={setSearchQuery}
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <ProjectFilter
+          categories={categories}
+          selectedCategory={selectedCategory}
+          searchQuery={searchQuery}
+          onCategoryChange={setSelectedCategory}
+          onSearchChange={setSearchQuery}
+        />
+      </motion.div>
 
       {filteredProjects.length > 0 ? (
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <motion.div key={project.id} variants={itemVariants}>
+              <ProjectCard project={project} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       ) : (
-        <div className="py-12 text-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="py-12 text-center"
+        >
           <p className="text-muted-foreground text-lg">
             No projects found matching your criteria.
           </p>
-        </div>
+        </motion.div>
       )}
     </div>
   );

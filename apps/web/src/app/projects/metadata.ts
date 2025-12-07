@@ -5,7 +5,7 @@ export const metadata: Metadata = generatePageMetadata({
   title: "Projects",
   description:
     "Explore Pedro Veloso's portfolio of projects including machine learning, data engineering, and full-stack web development work.",
-  url: "https://pveloso01.github.io/portfolio/projects",
+  url: "https://pveloso01.github.io/Portfolio/projects",
   tags: [
     "Projects",
     "Portfolio",
